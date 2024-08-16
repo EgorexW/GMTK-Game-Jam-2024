@@ -13,4 +13,9 @@ public class WorkerPanelTests : MonoBehaviour
     {
         workersPanel.ShowWorkers(workers);
     }
+    public void OnWorkerClicked(Worker worker)
+    {
+        workers.FireWorker(worker);
+        TestWorkerPanel();
+    }
 }

@@ -24,4 +24,9 @@ public class Worker : MonoBehaviour
     {
         return daysTillFire;
     }
+
+    public void SetDaysTillFire(Optional<int> value)
+    {
+        daysTillFire = value;
+    }
 }

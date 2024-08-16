@@ -34,4 +34,9 @@ public class Workers : MonoBehaviour
     {
         startWorkers = new List<Worker>(GetComponentsInChildren<Worker>());
     }
+
+    public void FireWorker(Worker worker)
+    {
+        worker.SetDaysTillFire(3); //TODO Remove magic nr
+    }
 }

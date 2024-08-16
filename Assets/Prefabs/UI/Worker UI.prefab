@@ -136,6 +136,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 5570969036398922611}
   textUI: {fileID: 5501902356047161990}
+  button: {fileID: 6113482395637019891}
+  onClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6074889512709278559
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,7 +233,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 5
+  m_fontSize: 29.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

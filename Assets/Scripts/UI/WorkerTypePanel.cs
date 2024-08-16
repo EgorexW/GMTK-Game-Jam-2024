@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using NaughtyAttributes;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class WorkerTypePanel : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class WorkerTypePanel : MonoBehaviour
 
     [SerializeField][Required] ObjectsUI workersCountUI;
     [SerializeField][Required] TextMeshProUGUI workersTitle;
+    
+    [Foldout("Event")] public UnityEvent<Worker> onClickEvent = new ();
 
     public WorkerType GetWorkerType()
     {
@@ -25,6 +28,11 @@ public class WorkerTypePanel : MonoBehaviour
             var workerUI = workerUIs[i].GetComponent<WorkerUI>();
             workerUI.Setup(worker);
         }
+    }
+
+    public void OnClick(Worker worker)
+    {
+        onClickEvent.Invoke(worker);
     }
 
     void OnValidate()
