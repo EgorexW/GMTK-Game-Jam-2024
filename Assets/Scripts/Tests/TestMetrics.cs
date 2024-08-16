@@ -5,6 +5,7 @@ using UnityEngine;
 public class TestMetrics : MonoBehaviour
 {
     [Required][SerializeField] StoreAttractiveness storeAttractiveness;
+    [Required][SerializeField] ClientsCap clientsCap;
     [Required][SerializeField] ClientsPerDay clientsPerDay;
     [Required][SerializeField] Store store;
 
@@ -13,7 +14,8 @@ public class TestMetrics : MonoBehaviour
     {
         List<IStoreObject> shopObjects = store.GetStoreObjects();
         var attractiveness = storeAttractiveness.Recalculate(shopObjects);
-        var clients = clientsPerDay.Recalculate(attractiveness);
+        var clientsCapValue = clientsCap.Recalculate(shopObjects);
+        var clients = clientsPerDay.Recalculate(attractiveness, clientsCapValue);
         Debug.Log(clients);
     }
 }

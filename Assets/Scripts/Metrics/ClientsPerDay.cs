@@ -1,4 +1,5 @@
 using NaughtyAttributes;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class ClientsPerDay : MonoBehaviour
@@ -7,13 +8,15 @@ public class ClientsPerDay : MonoBehaviour
     [ReadOnly][SerializeField] float clientsPerDay;
 
 
-    public float Recalculate(float attractiveness)
+    public float Recalculate(float attractiveness, float clientsCap)
     {
-        clientsPerDay = Calculate(attractiveness);
+        clientsPerDay = Calculate(attractiveness, clientsCap);
         return clientsPerDay;
     }
-    float Calculate(float attractiveness)
+    float Calculate(float attractiveness, float clientsCap)
     {
-        return attractiveness * attractivenessMod;
+        var value = attractiveness * attractivenessMod;
+        var cappedValue = Mathf.Min(value, clientsCap);
+        return cappedValue;
     }
 }

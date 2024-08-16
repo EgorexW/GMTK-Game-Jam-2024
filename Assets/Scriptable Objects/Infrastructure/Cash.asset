@@ -15,4 +15,6 @@ MonoBehaviour:
   sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   attractivenessImpact:
     baseValue: 0
-    capValue: 5
+  clientsCapImpact:
+    countsAsCash: 1
+    countsAsCashier: 0

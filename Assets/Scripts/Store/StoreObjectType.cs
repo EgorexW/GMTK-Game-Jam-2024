@@ -6,13 +6,20 @@ public class StoreObjectType : ScriptableObject
 {
     public Sprite sprite;
     public AttractivenessImpact attractivenessImpact;
+    public ClientsCapImpact clientsCapImpact;
+}
+
+[Serializable]
+public struct ClientsCapImpact
+{
+    public int cashValue;
+    public int cashierValue;
 }
 
 [Serializable]
 public struct AttractivenessImpact
 {
     public float baseValue;
-    public float capValue;
 }
 
 public interface IStoreObject

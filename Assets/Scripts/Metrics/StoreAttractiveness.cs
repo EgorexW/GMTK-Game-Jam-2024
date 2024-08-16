@@ -16,13 +16,10 @@ public class StoreAttractiveness : MonoBehaviour
     float Calculate(List<IStoreObject> shopObjects)
     {
         var value = 0f;
-        var valueCap = 0f;
         foreach (var shopObject in shopObjects){
             var attractivenessImpact = shopObject.GetShopObjectType().attractivenessImpact;
             value += attractivenessImpact.baseValue;
-            valueCap += attractivenessImpact.capValue;
         }
-        var cappedValue = math.min(value, valueCap);
-        return cappedValue;
+        return value;
     }
 }

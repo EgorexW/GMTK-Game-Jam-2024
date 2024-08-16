@@ -13,3 +13,8 @@ MonoBehaviour:
   m_Name: Cashier
   m_EditorClassIdentifier: 
   sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  attractivenessImpact:
+    baseValue: 0
+  clientsCapImpact:
+    countsAsCash: 0
+    countsAsCashier: 1
