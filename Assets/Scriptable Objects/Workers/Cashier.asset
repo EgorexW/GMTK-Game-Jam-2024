@@ -16,5 +16,6 @@ MonoBehaviour:
   attractivenessImpact:
     baseValue: 0
   clientsCapImpact:
-    countsAsCash: 0
-    countsAsCashier: 1
+    cashValue: 0
+    cashierValue: 0
+  description: Cashers customerst, requires a cash

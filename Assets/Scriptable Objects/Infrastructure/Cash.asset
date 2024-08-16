@@ -16,5 +16,7 @@ MonoBehaviour:
   attractivenessImpact:
     baseValue: 0
   clientsCapImpact:
-    countsAsCash: 1
-    countsAsCashier: 0
+    cashValue: 0
+    cashierValue: 0
+  description: Allows cashiers to cash customers
+  sellValue: 50

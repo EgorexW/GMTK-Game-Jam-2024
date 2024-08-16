@@ -7,6 +7,7 @@ public class StoreObjectType : ScriptableObject
     public Sprite sprite;
     public AttractivenessImpact attractivenessImpact;
     public ClientsCapImpact clientsCapImpact;
+    public string description;
 }
 
 [Serializable]

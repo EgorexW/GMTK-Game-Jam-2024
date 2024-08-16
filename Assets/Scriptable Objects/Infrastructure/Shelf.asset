@@ -15,4 +15,8 @@ MonoBehaviour:
   sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   attractivenessImpact:
     baseValue: 1
-    capValue: 0
+  clientsCapImpact:
+    cashValue: 0
+    cashierValue: 0
+  description: Gives more choice to the buyers
+  sellValue: 100
