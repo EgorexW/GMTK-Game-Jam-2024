@@ -5,13 +5,11 @@ using UnityEngine.Serialization;
 
 public class Workers : MonoBehaviour
 {
-    [SerializeField] List<Worker> startWorkers;
-
     Dictionary<WorkerType, List<Worker>> workersByType = new();
     
     void Awake()
     {
-        foreach (var worker in startWorkers){
+        foreach (var worker in GetComponentsInChildren<Worker>()){
             AddWorker(worker);
         }
     }
@@ -28,11 +26,6 @@ public class Workers : MonoBehaviour
     public List<Worker> GetWorkersOfType(WorkerType workerType)
     {
         return workersByType[workerType];
-    }
-
-    void Reset()
-    {
-        startWorkers = new List<Worker>(GetComponentsInChildren<Worker>());
     }
 
     public void FireWorker(Worker worker)

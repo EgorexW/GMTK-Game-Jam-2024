@@ -2,7 +2,7 @@ using System;
 using NaughtyAttributes;
 using UnityEngine;
 
-public class Worker : MonoBehaviour
+public class Worker : MonoBehaviour, IStoreObject
 { 
     [SerializeField][Required] WorkerType workerType;
     [SerializeField] Optional<int> daysTillFire;
@@ -28,5 +28,10 @@ public class Worker : MonoBehaviour
     public void SetDaysTillFire(Optional<int> value)
     {
         daysTillFire = value;
+    }
+
+    public StoreObjectType GetShopObjectType()
+    {
+        return workerType;
     }
 }

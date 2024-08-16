@@ -5,13 +5,12 @@ using UnityEngine.Serialization;
 
 public class Infrastructure : MonoBehaviour
 {
-    [SerializeField] List<InfrastructureObject> startInfrastructure;
 
     Dictionary<InfrastructureType, List<InfrastructureObject>> infrastructureByType = new();
     
     void Awake()
     {
-        foreach (var infrastructure in startInfrastructure){
+        foreach (var infrastructure in GetComponentsInChildren<InfrastructureObject>()){
             AddInfrastructure(infrastructure);
         }
     }
@@ -28,10 +27,5 @@ public class Infrastructure : MonoBehaviour
     public List<InfrastructureObject> GetInfrastructureOfType(InfrastructureType infrastructureType)
     {
         return infrastructureByType[infrastructureType];
-    }
-
-    void Reset()
-    {
-        startInfrastructure = new List<InfrastructureObject>(GetComponentsInChildren<InfrastructureObject>());
     }
 }

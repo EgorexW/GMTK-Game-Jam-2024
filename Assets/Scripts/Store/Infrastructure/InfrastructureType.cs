@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Infrastucture")]
-public class InfrastructureType : ShopObjectType
+public class InfrastructureType : StoreObjectType
 {
     
 }

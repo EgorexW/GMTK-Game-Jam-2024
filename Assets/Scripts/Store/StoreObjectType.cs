@@ -1,19 +1,21 @@
+using System;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class ShopObjectType : ScriptableObject
+public class StoreObjectType : ScriptableObject
 {
     public Sprite sprite;
     public AttractivenessImpact attractivenessImpact;
 }
 
+[Serializable]
 public struct AttractivenessImpact
 {
     public float baseValue;
     public float capValue;
 }
 
-public interface IShopObject
+public interface IStoreObject
 {
-    public ShopObjectType GetShopObjectType();
+    public StoreObjectType GetShopObjectType();
 }

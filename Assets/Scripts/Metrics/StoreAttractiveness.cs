@@ -8,12 +8,12 @@ public class StoreAttractiveness : MonoBehaviour
 {
     [ReadOnly][SerializeField] float attractiveness;
 
-    public float Recalculate(List<IShopObject> shopObjects)
+    public float Recalculate(List<IStoreObject> shopObjects)
     {
         attractiveness = Calculate(shopObjects);
         return attractiveness;
     }
-    float Calculate(List<IShopObject> shopObjects)
+    float Calculate(List<IStoreObject> shopObjects)
     {
         var value = 0f;
         var valueCap = 0f;

@@ -4,5 +4,5 @@ using NaughtyAttributes;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Worker")]
-public class WorkerType : ShopObjectType
+public class WorkerType : StoreObjectType
 { }
