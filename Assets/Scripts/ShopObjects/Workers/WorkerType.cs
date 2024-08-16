@@ -4,7 +4,5 @@ using NaughtyAttributes;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Worker")]
-public class WorkerType : ScriptableObject
-{
-    public Sprite sprite;
-}
+public class WorkerType : ShopObjectType
+{ }
