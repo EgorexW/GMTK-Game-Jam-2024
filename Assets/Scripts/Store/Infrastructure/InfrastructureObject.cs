@@ -14,4 +14,9 @@ public class InfrastructureObject : MonoBehaviour, IStoreObject
     {
         return infrastructureType;
     }
+
+    public void Remove()
+    {
+        Destroy(gameObject);
+    }
 }

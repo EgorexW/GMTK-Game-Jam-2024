@@ -28,4 +28,16 @@ public class Infrastructure : MonoBehaviour
     {
         return infrastructureByType[infrastructureType];
     }
+
+    public void Sell(InfrastructureObject infrastructureObject)
+    {
+        var sellValue = infrastructureObject.GetInfrastructureType().sellValue; // TODO Add money
+        infrastructureObject.Remove();
+        RemoveInfrastructure(infrastructureObject);
+    }
+
+    void RemoveInfrastructure(InfrastructureObject infrastructureObject)
+    {
+        infrastructureByType[infrastructureObject.GetInfrastructureType()].Remove(infrastructureObject);
+    }
 }

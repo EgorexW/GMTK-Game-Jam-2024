@@ -19,4 +19,6 @@ MonoBehaviour:
     cashValue: 0
     cashierValue: 0
   description: Allows cashiers to cash customers
-  sellValue: 50
+  sellValue:
+    enabled: 1
+    value: 50

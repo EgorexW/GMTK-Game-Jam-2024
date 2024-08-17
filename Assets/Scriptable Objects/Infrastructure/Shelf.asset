@@ -19,4 +19,6 @@ MonoBehaviour:
     cashValue: 0
     cashierValue: 0
   description: Gives more choice to the buyers
-  sellValue: 100
+  sellValue:
+    enabled: 1
+    value: 100

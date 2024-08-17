@@ -21,7 +21,7 @@ public class WorkersPanel : MonoBehaviour
 
     void Start()
     {
-        gameObject.SetActive(false);
+        Hide();
     }
 
     public void ShowWorkers(Workers workers)
