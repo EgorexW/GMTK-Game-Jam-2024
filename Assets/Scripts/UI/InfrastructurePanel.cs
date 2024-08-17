@@ -50,6 +50,7 @@ public class InfrastructurePanel : MonoBehaviour
             sellText.UpdateUI(CANT_SELL_TEXT);
         }
         else{
+            button.interactable = true;
             sellText.UpdateUI(infrastructureType.sellValue);
         }
         descriptionText.text = infrastructureType.description;

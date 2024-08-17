@@ -26,4 +26,4 @@ MonoBehaviour:
   description: Allows cashiers to cash customers
   sellValue:
     enabled: 1
-    value: 50
+    value: 100

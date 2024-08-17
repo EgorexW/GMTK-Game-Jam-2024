@@ -19,7 +19,7 @@ public class ClientsPerDay : MonoBehaviour
     int Calculate(float attractiveness)
     {
         var value = attractiveness * attractivenessMod;
-        return Mathf.RoundToInt(value);
+        return Mathf.CeilToInt(value);
     }
 
     public void DayPassed()

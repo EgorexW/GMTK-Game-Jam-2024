@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e629c2b9cd504671a7f787ac777eba87, type: 3}
-  m_Name: Shelf
+  m_Name: Main Shelf
   m_EditorClassIdentifier: 
   sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   attractivenessImpact:
-    baseValue: 1
+    baseValue: 10
   clientsCapImpact:
     cashValue: 0
     cashierValue: 0
   revenueImpact:
     baseValue: 0
   cleannessImpact:
-    dirtinessArea: 1
+    dirtinessArea: 3
     cleaningValue: 0
-  description: Gives more choice to the buyers
+  description: Most basic products
   sellValue:
-    enabled: 1
+    enabled: 0
     value: 50
