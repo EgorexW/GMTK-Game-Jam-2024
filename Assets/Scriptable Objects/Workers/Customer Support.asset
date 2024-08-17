@@ -19,6 +19,9 @@ MonoBehaviour:
     cashValue: 0
     cashierValue: 0
   revenueImpact:
-    baseValue: 2.5
+    baseValue: 5
+  cleannessImpact:
+    dirtinessArea: 0
+    cleaningValue: 0
   description: Convinces customers to buy more increasing your revenue
-  salary: 30
+  salary: 50

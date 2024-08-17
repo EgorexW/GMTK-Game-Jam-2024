@@ -24,4 +24,4 @@ MonoBehaviour:
     dirtinessArea: 0
     cleaningValue: 7
   description: Cleans the store, customers like clean stores:)
-  salary: 10
+  salary: 20

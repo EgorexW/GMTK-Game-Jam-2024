@@ -8,24 +8,24 @@ public class ClientsPerDay : MonoBehaviour
     [SerializeField] float minAttractiveness = 0.1f;
     [SerializeField] float attractivenessMod = 1f;
     
-    [ReadOnly][SerializeField] float clientsPerDay;
+    [ReadOnly][SerializeField] int clientsPerDay;
 
 
-    public float Recalculate(float attractiveness, float clientsCap)
+    public int Recalculate(float attractiveness, float clientsCap)
     {
         clientsPerDay = Calculate(attractiveness, clientsCap);
         return clientsPerDay;
     }
-    float Calculate(float attractiveness, float clientsCap)
+    int Calculate(float attractiveness, float clientsCap)
     {
         var value = attractiveness * attractivenessMod;
         var cappedValue = Mathf.Min(value, clientsCap);
-        return cappedValue;
+        return Mathf.RoundToInt(cappedValue);
     }
 
     public void DayPassed()
     {
         attractivenessMod -= decreasePerDay;
-        attractivenessMod = math.max(attractivenessMod, minAttractiveness);
+        attractivenessMod = Mathf.Max(attractivenessMod, minAttractiveness);
     }
 }

@@ -15,7 +15,7 @@ public class GameplayLoop : MonoBehaviour
     
     [Required][SerializeField] Store store;
 
-    [Foldout("Events")] UnityEvent onDayEnd;
+    [Foldout("Events")] public UnityEvent onDayEnd;
 
     void Awake()
     {

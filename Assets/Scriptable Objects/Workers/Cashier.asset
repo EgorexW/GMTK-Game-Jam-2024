@@ -20,5 +20,8 @@ MonoBehaviour:
     cashierValue: 1
   revenueImpact:
     baseValue: 0
+  cleannessImpact:
+    dirtinessArea: 0
+    cleaningValue: 0
   description: Cashers customers, requires a cash
-  salary: 20
+  salary: 40
