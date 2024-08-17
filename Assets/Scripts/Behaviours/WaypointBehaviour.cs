@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using NaughtyAttributes;
 using Nrjwolf.Tools.AttachAttributes;
 using Pathfinding;
+using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(Seeker), typeof(AIPath))]
 public class WaypointBehaviour : GameBehaviour
 {
+    const float MIN_TIME_TO_WAIT = 0.1f;
     const float DIS_TO_REACH_WAYPOINT = 0.2f;
+    const float NO_WAYPOINT_RETRY_TIME = 0.5f;
     
     [SerializeField] [GetComponent] Seeker seeker;
     [SerializeField] [GetComponent] AIPath aiPath;
@@ -17,15 +21,18 @@ public class WaypointBehaviour : GameBehaviour
     [SerializeField] WaypointCollection waypointCollection;
     
     [SerializeField] List<ObjectWithValue<WaypointType>> waypointsToFollow;
+    [SerializeField] float waitTimeVariance = 1;
     [SerializeField] OnFinish onFinish;
     [SerializeField] WaypointType endWaypoint;
 
+    [ReadOnly][SerializeField] State state = State.Finished;
     [ReadOnly][SerializeField] Waypoint nextWaypoint;
     [ReadOnly][SerializeField] float timeToWait;
     int currentIndex;
 
     void Awake()
     {
+        state = State.Finished;
         if (waypointCollection == null){
             waypointCollection = General.GetRootComponent<WaypointCollection>(gameObject);
         }
@@ -44,46 +51,61 @@ public class WaypointBehaviour : GameBehaviour
         NextWaypoint();
     }
 
-    void Update()
-    {
-        if (nextWaypoint == null){
-            return;
-        }
-        if (timeToWait > 0){
-            timeToWait -= GetDeltaTime();
-            if (timeToWait <= 0){
-                NextWaypoint();
-            }
-            return;
-        }
-        if (!seeker.IsDone()){
-            return;
-        }
-        aiPath.MovementUpdate(GetDeltaTime(), out Vector3 nextPosition, out Quaternion nextRotation);
-        transformToMove.position = nextPosition;
-        transformToMove.rotation = nextRotation;
-        if (!running){
-            return;
-        }
-        var dis = Vector3.Distance(nextWaypoint.transform.position, transform.position);
-        if (!(dis < DIS_TO_REACH_WAYPOINT)) return;
-        ReachedWaypoint();
-    }
-
-    void ReachedWaypoint()
-    {
-        timeToWait = waypointsToFollow[currentIndex];
-    }
-
     void NextWaypoint()
     {
-        currentIndex++;
+        currentIndex += 1;
         if (currentIndex >= waypointsToFollow.Count){
             Finish();
             return;
         }
         MoveToWaypoint(waypointsToFollow[currentIndex]);
     }
+    void Update()
+    {
+        switch (state){
+            case State.Finished:
+                return;
+            case State.Waiting:
+                timeToWait -= GetDeltaTime();
+                if (timeToWait <= 0){
+                    NextWaypoint();
+                }
+                return;
+            case State.NoWaypoint:
+                timeToWait -= GetDeltaTime();
+                if (timeToWait <= 0){
+                    MoveToWaypoint(waypointsToFollow[currentIndex]);
+                }
+                return;
+            case State.Moving:
+            case State.Ending:
+                if (!seeker.IsDone()){
+                    return;
+                }
+                aiPath.MovementUpdate(GetDeltaTime(), out Vector3 nextPosition, out Quaternion nextRotation);
+                transformToMove.position = nextPosition;
+                transformToMove.rotation = nextRotation;
+                var dis = Vector3.Distance(nextWaypoint.transform.position, transform.position);
+                if (!(dis < DIS_TO_REACH_WAYPOINT)) return;
+                ReachedWaypoint();
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+    }
+
+    void ReachedWaypoint()
+    {
+        if (state == State.Ending){
+            state = State.Finished;
+            return;
+        }
+        timeToWait = waypointsToFollow[currentIndex];
+        timeToWait += Random.Range(-waitTimeVariance, waitTimeVariance);
+        timeToWait = Mathf.Max(MIN_TIME_TO_WAIT, timeToWait);
+        state = State.Waiting;
+    }
+
 
     void Finish()
     {
@@ -92,6 +114,7 @@ public class WaypointBehaviour : GameBehaviour
                 End();
                 break;
             case OnFinish.StayOnLast:
+                state = State.Finished;
                 break;
             case OnFinish.Loop:
                 Begin();
@@ -105,13 +128,27 @@ public class WaypointBehaviour : GameBehaviour
     {
         base.End();
         MoveToWaypoint(endWaypoint);
+        state = State.Ending;
     }
 
     void MoveToWaypoint(WaypointType waypointType)
     {
-        timeToWait = 0;
+        if (nextWaypoint != null) nextWaypoint.reserved = false;
         nextWaypoint = waypointCollection.GetWaypointOfType(waypointType);
+        if (nextWaypoint == null){
+            state = State.NoWaypoint;
+            timeToWait = NO_WAYPOINT_RETRY_TIME;
+            return;
+        }
+        state = State.Moving;
+        nextWaypoint.reserved = true;
         seeker.StartPath(transform.position, nextWaypoint.transform.position);
+    }
+
+    protected override void OnDestroy()
+    {
+        base.OnDestroy();
+        if (nextWaypoint != null) nextWaypoint.reserved = false;
     }
 }
 
@@ -120,4 +157,12 @@ enum OnFinish
     End,
     StayOnLast,
     Loop
+}
+enum State
+{
+    Moving,
+    Waiting,
+    NoWaypoint,
+    Finished,
+    Ending
 }

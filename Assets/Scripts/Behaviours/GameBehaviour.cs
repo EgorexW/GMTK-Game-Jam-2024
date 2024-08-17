@@ -25,7 +25,7 @@ public abstract class GameBehaviour : MonoBehaviour
         running = false;
     }
 
-    protected void OnDestroy()
+    protected virtual void OnDestroy()
     {
         onDestroy.Invoke(this);
     }

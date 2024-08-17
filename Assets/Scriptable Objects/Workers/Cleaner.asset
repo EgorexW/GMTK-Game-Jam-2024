@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
   attractivenessImpact:
-    baseValue: 2
+    baseValue: 1
   clientsCapImpact:
     cashValue: 0
     cashierValue: 0

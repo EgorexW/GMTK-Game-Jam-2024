@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1905c88abe04b16bd340e8986796f59, type: 3}
   m_Name: Shelf
   m_EditorClassIdentifier: 
+  reserveable: 0

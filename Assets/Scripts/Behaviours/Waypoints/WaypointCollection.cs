@@ -24,11 +24,21 @@ public class WaypointCollection : MonoBehaviour
 
     public Waypoint GetWaypointOfType(WaypointType type)
     {
-        return GetWaypointsOfType(type).Random();
+        var waypointsOfType = GetWaypointsOfType(type);
+        return waypointsOfType.Random();
     }
 
     public List<Waypoint> GetWaypointsOfType(WaypointType type)
     {
-        return waypointsByType[type];
+        if (!type.reserveable){
+            return waypointsByType[type];
+        }
+        var availableWaypoints = new List<Waypoint>();
+        foreach (var waypoint in waypointsByType[type]){
+            if (!waypoint.reserved){
+                availableWaypoints.Add(waypoint);
+            }
+        }
+        return availableWaypoints;
     }
 }

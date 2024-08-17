@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class ClientsCap : MonoBehaviour
 {
-    [SerializeField] float capPerPair;
+    [SerializeField] int capPerPair;
     
-    [ReadOnly][SerializeField] float clientsCap;
+    [ReadOnly][SerializeField] int clientsCap;
 
-    public float Recalculate(List<IStoreObject> storeObjects)
+    public int Recalculate(List<IStoreObject> storeObjects)
     {
         clientsCap = Calculate(storeObjects);
         return clientsCap;
     }
-    float Calculate(List<IStoreObject> storeObjects)
+    int Calculate(List<IStoreObject> storeObjects)
     {
-        var cashes = 0f;
-        var cashiers = 0f;
+        var cashes = 0;
+        var cashiers = 0;
         foreach (var storeObject in storeObjects){
             var shopObjectType = storeObject.GetShopObjectType();
             cashes += shopObjectType.clientsCapImpact.cashValue;

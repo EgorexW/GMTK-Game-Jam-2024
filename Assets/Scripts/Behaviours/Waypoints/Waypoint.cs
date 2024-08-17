@@ -7,6 +7,8 @@ public class Waypoint : MonoBehaviour
 {
     public WaypointType type;
 
+    [ReadOnly] public bool reserved;
+
     [Foldout("Events")] public UnityEvent<Waypoint> onDestroy;
 
     void OnDestroy()

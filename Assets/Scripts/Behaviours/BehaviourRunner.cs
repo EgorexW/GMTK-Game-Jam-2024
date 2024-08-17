@@ -9,22 +9,32 @@ public class BehaviourRunner : MonoBehaviour, IBehaviourRunner
 
     void Awake()
     {
+        AddChildren();
+    }
+
+    void AddChildren()
+    {
         foreach (var behaviour in GetComponentsInChildren<GameBehaviour>()){
-            if (behaviours.Contains(behaviour)){
-                return;
-            }
-            behaviours.Add(behaviour);
-            behaviour.onDestroy.AddListener(RemoveBehaviour);
+            AddBehaviour(behaviour);
         }
     }
 
-    void RemoveBehaviour(GameBehaviour behaviour)
+    public void RemoveBehaviour(GameBehaviour behaviour)
     {
         behaviours.Remove(behaviour);
+    }
+    public void AddBehaviour(GameBehaviour behaviour)
+    {
+        if (behaviours.Contains(behaviour)){
+            return;
+        }
+        behaviours.Add(behaviour);
+        behaviour.onDestroy.AddListener(RemoveBehaviour);
     }
 
     public void Run()
     {
+        AddChildren();
         foreach (var behaviour in behaviours)
         {
             behaviour.Run(this);

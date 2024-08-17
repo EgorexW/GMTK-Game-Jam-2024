@@ -9,22 +9,31 @@ public class Day : MonoBehaviour
 {
     [Required][SerializeField] DayUI dayUI;
     [Required][SerializeField] BehaviourRunner behaviourRunner;
+    [Required] [SerializeField] ObjectsFactory customersSpawner;
     [SerializeField] float dayTime = 30;
-    
-    [SerializeField] float timeMod = 1;
+
+    [SerializeField] float baseTimeMod = 2;
+    [ReadOnly][SerializeField] float timeMod = 1;
 
     [Foldout("Events")] public UnityEvent onDayEnd = new();
 
     float dayTimeElapsed;
     bool dayRunning;
 
+    void Awake()
+    {
+        ChangeTimeMod(1);
+    }
+
     void Start()
     {
         dayUI.Hide();
     }
 
-    public void RunDay()
+    public void RunDay(DaySummary lastSummary)
     {
+        customersSpawner.Clear();
+        customersSpawner.SetCount(lastSummary.totalCustomers);
         dayUI.Show();
         behaviourRunner.Run();
         dayRunning = true;
@@ -57,7 +66,7 @@ public class Day : MonoBehaviour
 
     public void ChangeTimeMod(float newValue)
     {
-        timeMod = newValue;
-        behaviourRunner.timeMod = newValue;
+        timeMod = newValue * baseTimeMod;
+        behaviourRunner.timeMod = timeMod;
     }
 }

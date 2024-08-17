@@ -11,16 +11,15 @@ public class ClientsPerDay : MonoBehaviour
     [ReadOnly][SerializeField] int clientsPerDay;
 
 
-    public int Recalculate(float attractiveness, float clientsCap)
+    public int Recalculate(float attractiveness)
     {
-        clientsPerDay = Calculate(attractiveness, clientsCap);
+        clientsPerDay = Calculate(attractiveness);
         return clientsPerDay;
     }
-    int Calculate(float attractiveness, float clientsCap)
+    int Calculate(float attractiveness)
     {
         var value = attractiveness * attractivenessMod;
-        var cappedValue = Mathf.Min(value, clientsCap);
-        return Mathf.RoundToInt(cappedValue);
+        return Mathf.RoundToInt(value);
     }
 
     public void DayPassed()

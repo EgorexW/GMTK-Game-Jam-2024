@@ -14,8 +14,10 @@ public class GameplayLoop : MonoBehaviour
     [GetComponentInChildren][SerializeField] Morning morning;
     
     [Required][SerializeField] Store store;
+    
+    DaySummary lastSummary;
 
-    [Foldout("Events")] public UnityEvent onDayEnd;
+    [Foldout("Events")] public UnityEvent<DaySummary> onDayEnd;
 
     void Awake()
     {
@@ -37,7 +39,8 @@ public class GameplayLoop : MonoBehaviour
 
     public void RunDay()
     {
-        day.RunDay();
+        lastSummary = daySummaryCalculator.CalculateSummary(store);
+        day.RunDay(lastSummary);
     }
 
     void OnDayEnd()
@@ -47,9 +50,8 @@ public class GameplayLoop : MonoBehaviour
 
     void EndDay()
     {
-        var summary = daySummaryCalculator.CalculateSummary(store);
-        store.EndDay(summary);
-        onDayEnd.Invoke();
+        store.EndDay(lastSummary);
+        onDayEnd.Invoke(lastSummary);
         BeginMorning();
     }
 

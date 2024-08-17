@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1905c88abe04b16bd340e8986796f59, type: 3}
-  m_Name: Exit
+  m_Name: Entrance Queue
   m_EditorClassIdentifier: 
-  reserveable: 0
+  reserveable: 1
