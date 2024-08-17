@@ -16,8 +16,10 @@ MonoBehaviour:
   attractivenessImpact:
     baseValue: 0
   clientsCapImpact:
-    cashValue: 0
+    cashValue: 1
     cashierValue: 0
+  revenueImpact:
+    baseValue: 0
   description: Allows cashiers to cash customers
   sellValue:
     enabled: 1

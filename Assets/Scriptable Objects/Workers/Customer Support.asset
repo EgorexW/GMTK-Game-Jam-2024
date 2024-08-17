@@ -21,3 +21,4 @@ MonoBehaviour:
   revenueImpact:
     baseValue: 2.5
   description: Convinces customers to buy more increasing your revenue
+  salary: 30

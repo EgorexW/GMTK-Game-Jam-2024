@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
+using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 public class Infrastructure : MonoBehaviour
 {
-
+    [Required] [SerializeField] Money money;
+    
     Dictionary<InfrastructureType, List<InfrastructureObject>> infrastructureByType = new();
     
     void Awake()
@@ -31,7 +33,8 @@ public class Infrastructure : MonoBehaviour
 
     public void Sell(InfrastructureObject infrastructureObject)
     {
-        var sellValue = infrastructureObject.GetInfrastructureType().sellValue; // TODO Add money
+        var sellValue = infrastructureObject.GetInfrastructureType().sellValue;
+        money.ModifyValue(sellValue);
         infrastructureObject.Remove();
         RemoveInfrastructure(infrastructureObject);
     }

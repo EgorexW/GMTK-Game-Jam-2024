@@ -1118,12 +1118,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1426a48da08494f81a6b004f15d52cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  workers: {fileID: 983920265}
   storeAttractiveness: {fileID: 998996071}
   clientsCap: {fileID: 1934262712}
   clientsPerDay: {fileID: 2086685231}
   revenuePerClient: {fileID: 19535603}
   revenue: {fileID: 561454857}
   store: {fileID: 1935075943}
+  costs: {fileID: 1320278407}
 --- !u!114 &896492854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1769,6 +1771,56 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &1166611854
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1166611856}
+  - component: {fileID: 1166611855}
+  m_Layer: 0
+  m_Name: Money
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1166611855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166611854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4131c37e83784727a30c034d11c7741, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  log: 1
+  value: 1000
+  minMax: {x: -1, y: 1e+9}
+  onValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!4 &1166611856
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166611854}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1935075942}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1167586435
 GameObject:
   m_ObjectHideFlags: 0
@@ -1779,7 +1831,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1167586436}
   m_Layer: 0
-  m_Name: Metrics
+  m_Name: Calculators
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1803,6 +1855,7 @@ Transform:
   - {fileID: 1934262711}
   - {fileID: 19535602}
   - {fileID: 561454856}
+  - {fileID: 1320278406}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1185712439
@@ -1903,6 +1956,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6697366904910502868, guid: cede91d83519841f6a984eb95ec13926, type: 3}
   m_PrefabInstance: {fileID: 1231646134}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1320278405
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1320278406}
+  - component: {fileID: 1320278407}
+  m_Layer: 0
+  m_Name: Costs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1320278406
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320278405}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1167586436}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1320278407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320278405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99b20412428445daa5af760a35935ce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1346815225
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2658,7 +2755,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   capPerPair: 5
-  clientsCap: 0
+  clientsCap: 15
 --- !u!1 &1935075941
 GameObject:
   m_ObjectHideFlags: 0
@@ -2691,6 +2788,7 @@ Transform:
   m_Children:
   - {fileID: 983920264}
   - {fileID: 502625882}
+  - {fileID: 1166611856}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1935075943
@@ -2906,7 +3004,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attractivenessMod: 1
-  clientsPerDay: 0
+  clientsPerDay: 15
 --- !u!1001 &2092680842
 PrefabInstance:
   m_ObjectHideFlags: 0

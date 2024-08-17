@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -31,5 +32,10 @@ public class Workers : MonoBehaviour
     public void FireWorker(Worker worker)
     {
         worker.SetDaysTillFire(3); //TODO Remove magic nr
+    }
+
+    public Dictionary<WorkerType, List<Worker>> GetWorkersByType()
+    {
+        return new(workersByType);
     }
 }

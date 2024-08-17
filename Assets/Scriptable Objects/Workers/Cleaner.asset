@@ -18,4 +18,7 @@ MonoBehaviour:
   clientsCapImpact:
     cashValue: 0
     cashierValue: 0
+  revenueImpact:
+    baseValue: 0
   description: Cleans the store, customers like clean stores:)
+  salary: 10
