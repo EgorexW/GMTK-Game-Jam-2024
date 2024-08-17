@@ -243,6 +243,7 @@ GameObject:
   - component: {fileID: 97885336}
   - component: {fileID: 97885335}
   - component: {fileID: 97885334}
+  - component: {fileID: 97885337}
   m_Layer: 5
   m_Name: Morning UI
   m_TagString: Untagged
@@ -336,6 +337,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &97885337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97885332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecb86c2544df47319ef118ce4dd5c6ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &142872897
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -489,7 +502,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1878292866}
         m_TargetAssemblyTypeName: WorkerPanelLink, Assembly-CSharp
         m_MethodName: ShowWorkerPanel
         m_Mode: 1
@@ -2278,19 +2291,7 @@ MonoBehaviour:
   timeMod: 1
   onDayEnd:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1001 &929878216
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2908,9 +2909,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: WorkerPanelLink, Assembly-CSharp
-        m_MethodName: ShowWorkerPanel
+      - m_Target: {fileID: 1309644884}
+        m_TargetAssemblyTypeName: Morning, Assembly-CSharp
+        m_MethodName: EndMorning
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3493,6 +3494,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0182b1f4622f440183cdb73155993e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  morningUI: {fileID: 97885337}
+  onEndMorning:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1320278405
 GameObject:
   m_ObjectHideFlags: 0
@@ -3887,6 +3892,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   day: {fileID: 917996768}
   daySummaryCalculator: {fileID: 1683479146}
+  morning: {fileID: 1309644884}
   store: {fileID: 1935075943}
 --- !u!1 &1473368675
 GameObject:
@@ -4212,8 +4218,8 @@ MonoBehaviour:
   onClickEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: WorkerPanelTests, Assembly-CSharp
+      - m_Target: {fileID: 1878292866}
+        m_TargetAssemblyTypeName: WorkerPanelLink, Assembly-CSharp
         m_MethodName: OnWorkerClicked
         m_Mode: 0
         m_Arguments:
@@ -5088,7 +5094,7 @@ MonoBehaviour:
   onInfrastructureClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1878292865}
         m_TargetAssemblyTypeName: InfrastructurePanelLink, Assembly-CSharp
         m_MethodName: OnInfrastructureClicked
         m_Mode: 0
@@ -5602,8 +5608,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   workers: {fileID: 983920265}
-  money: {fileID: 0}
-  infrastructure: {fileID: 0}
+  money: {fileID: 1166611855}
+  infrastructure: {fileID: 502625883}
 --- !u!114 &1935075944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6991,7 +6997,7 @@ PrefabInstance:
     - target: {fileID: 6195178181090614035, guid: fff8db1c76a8c4f938f79cd4030b33ba, type: 3}
       propertyPath: onClickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1878292865}
     - target: {fileID: 6195178181090614035, guid: fff8db1c76a8c4f938f79cd4030b33ba, type: 3}
       propertyPath: onClickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2

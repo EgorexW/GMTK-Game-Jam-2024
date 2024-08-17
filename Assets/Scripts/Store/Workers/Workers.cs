@@ -38,4 +38,21 @@ public class Workers : MonoBehaviour
     {
         return new(workersByType);
     }
+
+    public void DayPassed()
+    {
+        foreach (var workersOfType in workersByType.Values){
+            foreach (var worker in workersOfType){
+                if (worker.DayPassedCheckForFire()){
+                    RemoveWorker(worker);
+                }
+            }
+        }
+    }
+
+    void RemoveWorker(Worker worker)
+    {
+        workersByType[worker.GetWorkerType()].Remove(worker);
+        worker.Remove();
+    }
 }

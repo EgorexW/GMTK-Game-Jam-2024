@@ -11,7 +11,7 @@ public class Morning : MonoBehaviour
 
     [Foldout("Events")] public UnityEvent onEndMorning = new UnityEvent();
 
-    public void StartMorning()
+    public void BeginMorning()
     {
         morningUI.Show();
     }

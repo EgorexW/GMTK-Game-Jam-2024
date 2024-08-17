@@ -25,4 +25,10 @@ public class Store : MonoBehaviour
     {
         return money;
     }
+
+    public void EndDay(DaySummary summary)
+    {
+        money.ModifyValue(summary.income);
+        workers.DayPassed();
+    }
 }

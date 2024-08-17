@@ -104,12 +104,12 @@ public class WaypointBehaviour : GameBehaviour
     public override void End()
     {
         base.End();
-        timeToWait = 0;
         MoveToWaypoint(endWaypoint);
     }
 
     void MoveToWaypoint(WaypointType waypointType)
     {
+        timeToWait = 0;
         nextWaypoint = waypointCollection.GetWaypointOfType(waypointType);
         seeker.StartPath(transform.position, nextWaypoint.transform.position);
     }

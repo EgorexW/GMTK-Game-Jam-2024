@@ -34,4 +34,17 @@ public class Worker : MonoBehaviour, IStoreObject
     {
         return workerType;
     }
+
+    public bool DayPassedCheckForFire()
+    {
+        if (!daysTillFire) return false;
+        daysTillFire -= 1;
+        if (daysTillFire != 0) return false;
+        return true;
+    }
+
+    public void Remove()
+    {
+        Destroy(gameObject);
+    }
 }

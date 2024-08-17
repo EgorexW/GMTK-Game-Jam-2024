@@ -14,14 +14,7 @@ public class DaySummaryCalculator : MonoBehaviour
     [GetComponentInChildren][SerializeField] Revenue revenue;
     [GetComponentInChildren][SerializeField] Costs costs;
 
-    public DaySummary EndDay(Store store)
-    {
-        var summary = CalculateSummary(store);
-        store.GetMoney().ModifyValue(summary.income);
-        return summary;
-    }
-
-    DaySummary CalculateSummary(Store store)
+    public DaySummary CalculateSummary(Store store)
     {
         List<IStoreObject> shopObjects = store.GetStoreObjects();
         Workers workers = store.GetWorkers();

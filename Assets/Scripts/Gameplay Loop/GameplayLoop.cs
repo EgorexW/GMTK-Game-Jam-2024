@@ -19,7 +19,14 @@ public class GameplayLoop : MonoBehaviour
         morning.onEndMorning.AddListener(OnMorningEnd);
         day.onDayEnd.AddListener(OnDayEnd);
     }
-
+    void Start()
+    {
+        BeginMorning();
+    }
+    void BeginMorning()
+    {
+        morning.BeginMorning();
+    }
     void OnMorningEnd()
     {
         RunDay();
@@ -37,6 +44,9 @@ public class GameplayLoop : MonoBehaviour
 
     void EndDay()
     {
-        var summary = daySummaryCalculator.EndDay(store);
+        var summary = daySummaryCalculator.CalculateSummary(store);
+        store.EndDay(summary);
+        BeginMorning();
     }
+
 }

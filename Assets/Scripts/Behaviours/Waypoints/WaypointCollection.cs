@@ -13,7 +13,13 @@ public class WaypointCollection : MonoBehaviour
                 waypointsByType[waypoint.type] = new List<Waypoint>();
             }
             waypointsByType[waypoint.type].Add(waypoint);
+            waypoint.onDestroy.AddListener(RemoveWaypoint);
         }
+    }
+
+    void RemoveWaypoint(Waypoint waypoint)
+    {
+        waypointsByType[waypoint.type].Remove(waypoint);
     }
 
     public Waypoint GetWaypointOfType(WaypointType type)
