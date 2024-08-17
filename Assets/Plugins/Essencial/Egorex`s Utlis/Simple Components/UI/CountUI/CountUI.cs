@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Events;
 #if UNITY_EDITOR
@@ -5,7 +6,7 @@ using UnityEngine.Events;
 
 public abstract class CountUI : MonoBehaviour
 {
-    [HideInInspector] public UnityEvent<float> onUpdate;
+    [Foldout("Events")] public UnityEvent<float> onUpdate;
     
     public abstract void UpdateUI(int count);
     public virtual void UpdateUI(float count){

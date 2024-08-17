@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 
 public class Infrastructure : MonoBehaviour
@@ -9,6 +10,8 @@ public class Infrastructure : MonoBehaviour
     [Required] [SerializeField] Money money;
     
     Dictionary<InfrastructureType, List<InfrastructureObject>> infrastructureByType = new();
+
+    [Foldout("Events")] public UnityEvent<InfrastructureObject> onRemoveInfrastructure;
     
     void Awake()
     {
@@ -42,5 +45,6 @@ public class Infrastructure : MonoBehaviour
     void RemoveInfrastructure(InfrastructureObject infrastructureObject)
     {
         infrastructureByType[infrastructureObject.GetInfrastructureType()].Remove(infrastructureObject);
+        onRemoveInfrastructure.Invoke(infrastructureObject);
     }
 }

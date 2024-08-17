@@ -105,7 +105,7 @@ public class CheckValue : MonoBehaviour
                 result = value == nrInt;
                 break;
             default:
-                throw new System.NotImplementedException();
+                throw new System.NotSupportedException();
         }
         ResolveResult(result);
     }
@@ -122,7 +122,7 @@ public class CheckValue : MonoBehaviour
                 result = Mathf.Approximately(value, nrFloat);
                 break;
             default:
-                throw new System.NotImplementedException();
+                throw new System.NotSupportedException();
         }
         ResolveResult(result);
     }

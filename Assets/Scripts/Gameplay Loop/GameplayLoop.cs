@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using NaughtyAttributes;
 using Nrjwolf.Tools.AttachAttributes;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 
 public class GameplayLoop : MonoBehaviour
@@ -13,6 +14,8 @@ public class GameplayLoop : MonoBehaviour
     [GetComponentInChildren][SerializeField] Morning morning;
     
     [Required][SerializeField] Store store;
+
+    [Foldout("Events")] UnityEvent onDayEnd;
 
     void Awake()
     {
@@ -46,6 +49,7 @@ public class GameplayLoop : MonoBehaviour
     {
         var summary = daySummaryCalculator.CalculateSummary(store);
         store.EndDay(summary);
+        onDayEnd.Invoke();
         BeginMorning();
     }
 

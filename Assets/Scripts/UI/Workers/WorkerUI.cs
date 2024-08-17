@@ -36,6 +36,7 @@ public class WorkerUI : MonoBehaviour
             button.interactable = false;
         }
         else{
+            button.interactable = true;
             textUI.UpdateUI("");
         }
     }

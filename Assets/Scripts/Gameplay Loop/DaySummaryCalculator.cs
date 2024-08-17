@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using NaughtyAttributes;
 using Nrjwolf.Tools.AttachAttributes;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class DaySummaryCalculator : MonoBehaviour
 {
@@ -12,7 +13,11 @@ public class DaySummaryCalculator : MonoBehaviour
     [GetComponentInChildren][SerializeField] RevenuePerClient revenuePerClient;
     [GetComponentInChildren][SerializeField] StoreCleanness storeCleanness;
     [GetComponentInChildren][SerializeField] Revenue revenue;
+    [FormerlySerializedAs("costs")] [GetComponentInChildren][SerializeField] WorkersSalary workersSalary;
+    [GetComponentInChildren][SerializeField] Rent rent; 
     [GetComponentInChildren][SerializeField] Costs costs;
+
+    [Required] [SerializeField] SummaryUI summaryUI;
 
     public DaySummary CalculateSummary(Store store)
     {
@@ -24,12 +29,20 @@ public class DaySummaryCalculator : MonoBehaviour
         var clients = clientsPerDay.Recalculate(attractiveness, clientsCapValue); 
         var revenuePerClientValue = revenuePerClient.Recalculate(shopObjects); 
         var revenueValue = revenue.Recalculate(revenuePerClientValue, clients);
-        var costsValue = costs.Recalculate(workers);
+        var workersSalaryValue = workersSalary.Recalculate(workers);
+        var rentValue = rent.Recalculate();
+        var costsValue = costs.Recalculate(workersSalaryValue, rentValue);
         var income = revenueValue - costsValue;
         var summary = new DaySummary{
             income = income,
-            clients = clients
+            customersServed = clients,
+            revenue = revenueValue,
+            averageSpending = revenuePerClientValue,
+            workersSalary = workersSalaryValue,
+            rent = rentValue,
+            costs = costsValue
         };
+        summaryUI.ShowSummary(summary);
         return summary;
     }
 }
@@ -37,5 +50,10 @@ public class DaySummaryCalculator : MonoBehaviour
 public struct DaySummary
 {
     public float income;
-    public float clients;
+    public float customersServed;
+    public float revenue;
+    public float averageSpending;
+    public float workersSalary;
+    public float rent;
+    public float costs;
 }

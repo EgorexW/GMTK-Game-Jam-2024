@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class ClientsPerDay : MonoBehaviour
 {
-    public float attractivenessMod = 1f;
+    [SerializeField] float decreasePerDay = 0.1f;
+    [SerializeField] float minAttractiveness = 0.1f;
+    [SerializeField] float attractivenessMod = 1f;
+    
     [ReadOnly][SerializeField] float clientsPerDay;
 
 
@@ -18,5 +21,11 @@ public class ClientsPerDay : MonoBehaviour
         var value = attractiveness * attractivenessMod;
         var cappedValue = Mathf.Min(value, clientsCap);
         return cappedValue;
+    }
+
+    public void DayPassed()
+    {
+        attractivenessMod -= decreasePerDay;
+        attractivenessMod = math.max(attractivenessMod, minAttractiveness);
     }
 }
