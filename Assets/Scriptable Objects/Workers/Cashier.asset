@@ -20,5 +20,5 @@ MonoBehaviour:
     cashierValue: 1
   revenueImpact:
     baseValue: 0
-  description: Cashers customerst, requires a cash
+  description: Cashers customers, requires a cash
   salary: 20

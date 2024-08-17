@@ -190,6 +190,9 @@ MonoBehaviour:
   sellText: {fileID: 4430738233494801047}
   descriptionText: {fileID: 7249520841663715018}
   button: {fileID: 4571423424009619958}
+  onClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1053319151935695886
 GameObject:
   m_ObjectHideFlags: 0
@@ -792,7 +795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

@@ -20,5 +20,8 @@ MonoBehaviour:
     cashierValue: 0
   revenueImpact:
     baseValue: 0
+  cleannessImpact:
+    dirtinessArea: 0
+    cleaningValue: 7
   description: Cleans the store, customers like clean stores:)
   salary: 10

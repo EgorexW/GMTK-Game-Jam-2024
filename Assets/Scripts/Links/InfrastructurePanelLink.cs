@@ -1,20 +1,18 @@
 using NaughtyAttributes;
 using UnityEngine;
 
-public class InfrastructurePanelTest : MonoBehaviour
+public class InfrastructurePanelLink : MonoBehaviour
 {
-    [Required][SerializeField] InfrastructureObject infrastructureObject;
     [Required][SerializeField] InfrastructurePanel panel;
     [Required] [SerializeField] Infrastructure infrastructure;
     
-    [Button]
-    void TestInfrastructurePanel()
+    public void OnInfrastructureClicked(InfrastructureObject infrastructureObject)
     {
         panel.Show(infrastructureObject);
     }
-    public void OnInfrastructureClick(InfrastructureObject clickedInfrastructureObject)
+    public void OnInfrastructurePanelClick(InfrastructureObject clickedInfrastructureObject)
     {
-        panel.Hide();
         infrastructure.Sell(clickedInfrastructureObject);
+        panel.Hide();
     }
 }

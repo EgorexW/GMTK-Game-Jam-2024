@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 public enum Direction{
     Left,
@@ -197,6 +198,11 @@ public class General : MonoBehaviour
     {
         var poses = enemies.ConvertAll(input => (Vector2)input.transform.position);
         return GetClosestPos(transformPosition, poses);
+    }
+
+    public static bool IsMouseOverUI()
+    {
+        return EventSystem.current.IsPointerOverGameObject();
     }
 }
 

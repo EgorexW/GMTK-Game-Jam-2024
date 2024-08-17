@@ -12,7 +12,7 @@ public class WorkerUI : MonoBehaviour
     [Required] [SerializeField] TextUI textUI;
     [Required] [SerializeField] Button button;
     
-    [Foldout("Event")] public UnityEvent<Worker> onClickEvent = new ();
+    [Foldout("Events")] public UnityEvent<Worker> onClickEvent = new ();
     
     Worker worker;
 

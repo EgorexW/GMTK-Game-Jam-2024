@@ -1,8 +1,9 @@
+using NaughtyAttributes;
 using UnityEngine;
 
 public class Costs : MonoBehaviour
 {
-    float costs;
+    [ReadOnly][SerializeField] float costs;
 
     public float Recalculate(Workers workers)
     {

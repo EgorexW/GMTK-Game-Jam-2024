@@ -20,6 +20,9 @@ MonoBehaviour:
     cashierValue: 0
   revenueImpact:
     baseValue: 0
+  cleannessImpact:
+    dirtinessArea: 2
+    cleaningValue: 0
   description: Allows cashiers to cash customers
   sellValue:
     enabled: 1

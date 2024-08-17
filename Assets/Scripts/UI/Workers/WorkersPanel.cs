@@ -10,7 +10,7 @@ public class WorkersPanel : MonoBehaviour
 {
     List<WorkerTypePanel> panels;
 
-    [Foldout("Event")] public UnityEvent<Worker> onClickEvent = new ();
+    [Foldout("Events")] public UnityEvent<Worker> onClickEvent = new ();
     void Awake()
     {
         panels = new List<WorkerTypePanel>(GetComponentsInChildren<WorkerTypePanel>());

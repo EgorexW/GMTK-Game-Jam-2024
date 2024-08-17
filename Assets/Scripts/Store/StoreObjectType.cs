@@ -8,7 +8,15 @@ public class StoreObjectType : ScriptableObject
     public AttractivenessImpact attractivenessImpact;
     public ClientsCapImpact clientsCapImpact;
     public RevenueImpact revenueImpact;
+    public CleannessImpact cleannessImpact;
     public string description;
+}
+
+[Serializable]
+public struct CleannessImpact
+{
+    public float dirtinessArea;
+    public float cleaningValue;
 }
 
 [Serializable]

@@ -16,7 +16,7 @@ public class InfrastructurePanel : MonoBehaviour
     [Required] [SerializeField] TextMeshProUGUI descriptionText;
     [Required] [SerializeField] Button button;
     
-    [Foldout("Event")] public UnityEvent<InfrastructureObject> onClickEvent;
+    [Foldout("Events")] public UnityEvent<InfrastructureObject> onClickEvent;
     
     InfrastructureObject infrastructure;
 
@@ -37,6 +37,10 @@ public class InfrastructurePanel : MonoBehaviour
 
     public void Show(InfrastructureObject infrastructureTmp)
     {
+        if (infrastructureTmp == null){
+            Hide();
+            return;
+        }
         Show();
         infrastructure = infrastructureTmp;
         var infrastructureType = infrastructure.GetInfrastructureType();

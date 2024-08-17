@@ -18,6 +18,11 @@ MonoBehaviour:
   clientsCapImpact:
     cashValue: 0
     cashierValue: 0
+  revenueImpact:
+    baseValue: 0
+  cleannessImpact:
+    dirtinessArea: 1
+    cleaningValue: 0
   description: Gives more choice to the buyers
   sellValue:
     enabled: 1

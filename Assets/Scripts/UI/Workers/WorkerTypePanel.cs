@@ -8,10 +8,12 @@ public class WorkerTypePanel : MonoBehaviour
 {
     [SerializeField][Required] WorkerType workerType;
 
-    [SerializeField][Required] ObjectsUI workersCountUI;
     [SerializeField][Required] TextMeshProUGUI workersTitle;
+    [Required][SerializeField] TextMeshProUGUI description;
+    [Required] [SerializeField] CountUI salary;
+    [SerializeField][Required] ObjectsUI workersCountUI;
     
-    [Foldout("Event")] public UnityEvent<Worker> onClickEvent = new ();
+    [Foldout("Events")] public UnityEvent<Worker> onClickEvent = new ();
 
     public WorkerType GetWorkerType()
     {
@@ -20,7 +22,9 @@ public class WorkerTypePanel : MonoBehaviour
 
     public void SetupPanel(List<Worker> workers)
     {
-        OnValidate();
+        workersTitle.text = workerType.name;
+        description.text = workerType.description;
+        salary.UpdateUI(workerType.salary);
         workersCountUI.UpdateUI(workers.Count);
         var workerUIs = workersCountUI.GetActiveObjs();
         for (int i = 0; i < workers.Count; i++){
@@ -33,10 +37,5 @@ public class WorkerTypePanel : MonoBehaviour
     public void OnClick(Worker worker)
     {
         onClickEvent.Invoke(worker);
-    }
-
-    void OnValidate()
-    {
-        workersTitle.text = workerType.name;
     }
 }

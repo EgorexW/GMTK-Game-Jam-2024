@@ -7,9 +7,8 @@ public class WorkerPanelLink : MonoBehaviour
 {
     [Required] [SerializeField] Workers workers;
     [Required] [SerializeField] WorkersPanel workersPanel;
-
-    [Button]
-    void ShowWorkerPanel()
+    
+    public void ShowWorkerPanel()
     {
         workersPanel.ShowWorkers(workers);
     }
