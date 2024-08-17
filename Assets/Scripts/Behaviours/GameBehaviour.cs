@@ -3,10 +3,12 @@ using UnityEngine;
 public abstract class GameBehaviour : MonoBehaviour
 {
     protected IBehaviourRunner runner;
+    protected bool running;
 
     public virtual void Run(IBehaviourRunner runnerTmp)
     {
-        this.runner = runnerTmp;
+        runner = runnerTmp;
+        running = true;
     }
 
     protected float GetDeltaTime()
@@ -15,7 +17,7 @@ public abstract class GameBehaviour : MonoBehaviour
     }
     public virtual void End()
     {
-        runner = null;
+        running = false;
     }
 }
 

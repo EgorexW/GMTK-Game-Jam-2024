@@ -16,6 +16,14 @@ PrefabInstance:
       propertyPath: onFinish
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3091887577544706743, guid: f9848047560024b44b3554a45cf265c2, type: 3}
+      propertyPath: waypointsToFollow.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3091887577544706743, guid: f9848047560024b44b3554a45cf265c2, type: 3}
+      propertyPath: waypointsToFollow.Array.data[0].Object
+      value: 
+      objectReference: {fileID: 11400000, guid: 02ed89ddbb7e246089b6060c6c5fd7f9, type: 2}
     - target: {fileID: 4099012386640871187, guid: f9848047560024b44b3554a45cf265c2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

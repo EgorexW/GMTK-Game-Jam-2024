@@ -11,9 +11,9 @@ public class TestMetrics : MonoBehaviour
     [Required][SerializeField] ClientsPerDay clientsPerDay;
     [Required][SerializeField] RevenuePerClient revenuePerClient;
     [Required][SerializeField] StoreCleanness storeCleanness;
-    [FormerlySerializedAs("revenueCalculator")] [Required][SerializeField] Revenue revenue;
+    [Required][SerializeField] Revenue revenue;
     [Required][SerializeField] Store store;
-    [FormerlySerializedAs("costsCalculator")] [Required][SerializeField] Costs costs;
+    [Required][SerializeField] Costs costs;
 
     [Button]
     void GetIncome()

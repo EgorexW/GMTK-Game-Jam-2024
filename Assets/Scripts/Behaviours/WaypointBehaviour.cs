@@ -8,6 +8,8 @@ using UnityEngine;
 [RequireComponent(typeof(Seeker), typeof(AIPath))]
 public class WaypointBehaviour : GameBehaviour
 {
+    const float DIS_TO_REACH_WAYPOINT = 0.2f;
+    
     [SerializeField] [GetComponent] Seeker seeker;
     [SerializeField] [GetComponent] AIPath aiPath;
     
@@ -44,6 +46,9 @@ public class WaypointBehaviour : GameBehaviour
 
     void Update()
     {
+        if (nextWaypoint == null){
+            return;
+        }
         if (timeToWait > 0){
             timeToWait -= GetDeltaTime();
             if (timeToWait <= 0){
@@ -57,9 +62,11 @@ public class WaypointBehaviour : GameBehaviour
         aiPath.MovementUpdate(GetDeltaTime(), out Vector3 nextPosition, out Quaternion nextRotation);
         transformToMove.position = nextPosition;
         transformToMove.rotation = nextRotation;
-        if (!aiPath.reachedDestination){
+        if (!running){
             return;
         }
+        var dis = Vector3.Distance(nextWaypoint.transform.position, transform.position);
+        if (!(dis < DIS_TO_REACH_WAYPOINT)) return;
         ReachedWaypoint();
     }
 
@@ -75,8 +82,7 @@ public class WaypointBehaviour : GameBehaviour
             Finish();
             return;
         }
-        nextWaypoint = waypointCollection.GetWaypointOfType(waypointsToFollow[currentIndex]);
-        seeker.StartPath(transform.position, nextWaypoint.transform.position);
+        MoveToWaypoint(waypointsToFollow[currentIndex]);
     }
 
     void Finish()
@@ -98,7 +104,14 @@ public class WaypointBehaviour : GameBehaviour
     public override void End()
     {
         base.End();
-        nextWaypoint = waypointCollection.GetWaypointOfType(endWaypoint);
+        timeToWait = 0;
+        MoveToWaypoint(endWaypoint);
+    }
+
+    void MoveToWaypoint(WaypointType waypointType)
+    {
+        nextWaypoint = waypointCollection.GetWaypointOfType(waypointType);
+        seeker.StartPath(transform.position, nextWaypoint.transform.position);
     }
 }
 
