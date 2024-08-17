@@ -9,15 +9,22 @@ using UnityEngine.Serialization;
 public class GameplayLoop : MonoBehaviour
 {
     [GetComponentInChildren][SerializeField] Day day;
-    [FormerlySerializedAs("dayEnd")] [GetComponentInChildren][SerializeField] DaySummaryCalculator daySummaryCalculator;
+    [GetComponentInChildren][SerializeField] DaySummaryCalculator daySummaryCalculator;
+    [GetComponentInChildren][SerializeField] Morning morning;
     
     [Required][SerializeField] Store store;
 
     void Awake()
     {
+        morning.onEndMorning.AddListener(OnMorningEnd);
         day.onDayEnd.AddListener(OnDayEnd);
     }
-    [Button]
+
+    void OnMorningEnd()
+    {
+        RunDay();
+    }
+
     public void RunDay()
     {
         day.RunDay();
@@ -25,7 +32,11 @@ public class GameplayLoop : MonoBehaviour
 
     void OnDayEnd()
     {
-        var summary = daySummaryCalculator.EndDay(store);
+        EndDay();
     }
 
+    void EndDay()
+    {
+        var summary = daySummaryCalculator.EndDay(store);
+    }
 }
