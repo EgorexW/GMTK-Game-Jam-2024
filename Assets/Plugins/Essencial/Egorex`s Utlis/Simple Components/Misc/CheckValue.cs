@@ -59,59 +59,75 @@ public class CheckValue : MonoBehaviour
     [Foldout("Events")]
     public UnityEvent<bool> onCheck;
 
-    public bool GetCheck(object obj){
-        bool result = false;
+    public void GetCheck(object obj){
         switch (objType){
             case ObjectType.Int:
-                result = CheckInt((int)obj);
+                CheckInt((int)obj);
                 break;
             case ObjectType.Float:
-                result = CheckFloat((float)obj);
+                CheckFloat((float)obj);
                 break;
             case ObjectType.String:
-                result = CheckString((string)obj);
+                CheckString((string)obj);
                 break;
             case ObjectType.Bool:
-                result = CheckBool((bool)obj);
+                CheckBool((bool)obj);
                 break;
         }
+    }
+
+    void ResolveResult(bool result)
+    {
         if (result){
             onTrue.Invoke();
         } else {
             onFalse.Invoke();
         }
         onCheck.Invoke(result);
-        return result;
     }
 
-    public bool CheckBool(bool condition)
+    public void CheckBool(bool condition)
     {
-        return condition == desiredCondition;
+        var result = condition == desiredCondition;
+        ResolveResult(result);
     }
 
-    public bool CheckInt(int value){
+    public void CheckInt(int value){
+        bool result;
         switch (compareType){
             case CompareType.Bigger:
-                return value > nrInt;
+                result = value > nrInt;
+                break;
             case CompareType.Smaller:
-                return value < nrInt;
+                result = value < nrInt;
+                break;
             case CompareType.Equal:
-                return value == nrInt;
+                result = value == nrInt;
+                break;
+            default:
+                throw new System.NotImplementedException();
         }
-        return false;
+        ResolveResult(result);
     }
-    public bool CheckFloat(float value){
+    public void CheckFloat(float value){
+        bool result;
         switch (compareType){
             case CompareType.Bigger:
-                return value > nrInt;
+                result = value > nrFloat;
+                break;
             case CompareType.Smaller:
-                return value < nrInt;
+                result = value < nrFloat;
+                break;
             case CompareType.Equal:
-                return value == nrInt;
+                result = Mathf.Approximately(value, nrFloat);
+                break;
+            default:
+                throw new System.NotImplementedException();
         }
-        return false;
+        ResolveResult(result);
     }
-    public bool CheckString(string value){
-        return value == text;
+    public void CheckString(string value){
+        var result = value == text;
+        ResolveResult(result);
     }
 }

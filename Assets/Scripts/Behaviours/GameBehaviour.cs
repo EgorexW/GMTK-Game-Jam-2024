@@ -1,9 +1,14 @@
+using System;
+using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Events;
 
 public abstract class GameBehaviour : MonoBehaviour
 {
     protected IBehaviourRunner runner;
     protected bool running;
+
+    [Foldout("Events")] public UnityEvent<GameBehaviour> onDestroy;
 
     public virtual void Run(IBehaviourRunner runnerTmp)
     {
@@ -18,6 +23,11 @@ public abstract class GameBehaviour : MonoBehaviour
     public virtual void End()
     {
         running = false;
+    }
+
+    protected void OnDestroy()
+    {
+        onDestroy.Invoke(this);
     }
 }
 

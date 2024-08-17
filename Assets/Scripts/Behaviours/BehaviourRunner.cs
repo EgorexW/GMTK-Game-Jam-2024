@@ -14,7 +14,13 @@ public class BehaviourRunner : MonoBehaviour, IBehaviourRunner
                 return;
             }
             behaviours.Add(behaviour);
+            behaviour.onDestroy.AddListener(RemoveBehaviour);
         }
+    }
+
+    void RemoveBehaviour(GameBehaviour behaviour)
+    {
+        behaviours.Remove(behaviour);
     }
 
     public void Run()

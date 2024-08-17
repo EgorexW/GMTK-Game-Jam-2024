@@ -7,6 +7,7 @@ using UnityEngine.Events;
 
 public class Day : MonoBehaviour
 {
+    [Required][SerializeField] DayUI dayUI;
     [Required][SerializeField] BehaviourRunner behaviourRunner;
     [SerializeField] float dayTime = 30;
     
@@ -17,10 +18,17 @@ public class Day : MonoBehaviour
     float dayTimeElapsed;
     bool dayRunning;
 
+    void Start()
+    {
+        dayUI.Hide();
+    }
+
     public void RunDay()
     {
+        dayUI.Show();
         behaviourRunner.Run();
         dayRunning = true;
+        dayTimeElapsed = 0;
     }
 
     void Update()
@@ -36,6 +44,7 @@ public class Day : MonoBehaviour
 
     void EndDay()
     {
+        dayUI.Hide();
         behaviourRunner.End();
         dayRunning = false;
         onDayEnd.Invoke();

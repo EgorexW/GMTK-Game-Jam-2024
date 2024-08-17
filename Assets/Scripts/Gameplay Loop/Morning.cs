@@ -10,7 +10,7 @@ public class Morning : MonoBehaviour
     [Required] [SerializeField] MorningUI morningUI;
 
     [Foldout("Events")] public UnityEvent onEndMorning = new UnityEvent();
-
+    
     public void BeginMorning()
     {
         morningUI.Show();

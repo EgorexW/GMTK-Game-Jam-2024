@@ -6,8 +6,11 @@ using UnityEngine.Serialization;
 
 public class Workers : MonoBehaviour
 {
-    Dictionary<WorkerType, List<Worker>> workersByType = new();
+    [SerializeField] int fireDelay = 3;
     
+    Dictionary<WorkerType, List<Worker>> workersByType = new();
+    List<Worker> workers = new();
+
     void Awake()
     {
         foreach (var worker in GetComponentsInChildren<Worker>()){
@@ -17,6 +20,7 @@ public class Workers : MonoBehaviour
 
     void AddWorker(Worker worker)
     {
+        workers.Add(worker);
         if (!workersByType.TryGetValue(worker.GetWorkerType(), out var workersOfType)){
             workersOfType = new List<Worker>();
             workersByType[worker.GetWorkerType()] = workersOfType;
@@ -31,7 +35,7 @@ public class Workers : MonoBehaviour
 
     public void FireWorker(Worker worker)
     {
-        worker.SetDaysTillFire(3); //TODO Remove magic nr
+        worker.SetDaysTillFire(fireDelay);
     }
 
     public Dictionary<WorkerType, List<Worker>> GetWorkersByType()
@@ -41,11 +45,9 @@ public class Workers : MonoBehaviour
 
     public void DayPassed()
     {
-        foreach (var workersOfType in workersByType.Values){
-            foreach (var worker in workersOfType){
-                if (worker.DayPassedCheckForFire()){
-                    RemoveWorker(worker);
-                }
+        foreach (var worker in workers.Copy()){
+            if (worker.DayPassedCheckForFire()){
+                RemoveWorker(worker);
             }
         }
     }
@@ -53,6 +55,7 @@ public class Workers : MonoBehaviour
     void RemoveWorker(Worker worker)
     {
         workersByType[worker.GetWorkerType()].Remove(worker);
+        workers.Remove(worker);
         worker.Remove();
     }
 }
