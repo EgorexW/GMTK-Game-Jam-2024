@@ -18,4 +18,6 @@ MonoBehaviour:
   clientsCapImpact:
     cashValue: 0
     cashierValue: 0
+  revenueImpact:
+    baseValue: 2.5
   description: Convinces customers to buy more increasing your revenue

@@ -7,7 +7,14 @@ public class StoreObjectType : ScriptableObject
     public Sprite sprite;
     public AttractivenessImpact attractivenessImpact;
     public ClientsCapImpact clientsCapImpact;
+    public RevenueImpact revenueImpact;
     public string description;
+}
+
+[Serializable]
+public struct RevenueImpact
+{
+    public float baseValue;
 }
 
 [Serializable]
