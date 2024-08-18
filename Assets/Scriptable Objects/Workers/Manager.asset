@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e0150f401cdf404fb418d5cdbab9e68, type: 3}
-  m_Name: Cashier
+  m_Name: Manager
   m_EditorClassIdentifier: 
-  sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  sprite: {fileID: -9095717837082945937, guid: bd3cb4af8406d4436a2ae8c2aafe1f8d, type: 3}
   attractivenessImpact:
     baseValue: 0
   clientsCapImpact:
     cashValue: 0
-    cashierValue: 1
+    cashierValue: 0
   revenueImpact:
     baseValue: 0
   cleannessImpact:
     dirtinessArea: 0
     cleaningValue: 0
-  description: Cashers customers, requires a cash
-  salary: 60
+  description: Keeps the store running
+  salary: 50

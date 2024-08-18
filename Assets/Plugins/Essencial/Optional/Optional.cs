@@ -30,7 +30,6 @@ public struct Optional<T>
         this.enabled = enabled;
         value = initialValue;
     }
-
     // conversion operators
     public static implicit operator Optional<T>(T v) {
         return new Optional<T>(v);

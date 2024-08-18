@@ -26,4 +26,4 @@ MonoBehaviour:
   description: Gives more choice to the buyers
   sellValue:
     enabled: 1
-    value: 50
+    value: 20

@@ -6,21 +6,14 @@ using UnityEngine.Events;
 
 public class WorkerTypePanel : MonoBehaviour
 {
-    [SerializeField][Required] WorkerType workerType;
-
     [SerializeField][Required] TextMeshProUGUI workersTitle;
     [Required][SerializeField] TextMeshProUGUI description;
     [Required] [SerializeField] CountUI salary;
     [SerializeField][Required] ObjectsUI workersCountUI;
     
     [Foldout("Events")] public UnityEvent<Worker> onClickEvent = new ();
-
-    public WorkerType GetWorkerType()
-    {
-        return workerType;
-    }
-
-    public void SetupPanel(List<Worker> workers)
+    
+    public void SetupPanel(List<Worker> workers, WorkerType workerType)
     {
         workersTitle.text = workerType.name;
         description.text = workerType.description;

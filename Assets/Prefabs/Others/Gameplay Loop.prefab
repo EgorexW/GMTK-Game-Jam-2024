@@ -321,6 +321,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5603313743675791605}
     m_Modifications:
+    - target: {fileID: 199218555560602210, guid: 505eb36c621ea47a0847b24b5f82ddd3, type: 3}
+      propertyPath: baseRevenuePerClient
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2324827318271051424, guid: 505eb36c621ea47a0847b24b5f82ddd3, type: 3}
+      propertyPath: onRecalculate.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2324827318271051424, guid: 505eb36c621ea47a0847b24b5f82ddd3, type: 3}
+      propertyPath: onRecalculate.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2324827318271051424, guid: 505eb36c621ea47a0847b24b5f82ddd3, type: 3}
+      propertyPath: onRecalculate.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetTargetCleanness
+      objectReference: {fileID: 0}
+    - target: {fileID: 2324827318271051424, guid: 505eb36c621ea47a0847b24b5f82ddd3, type: 3}
+      propertyPath: onRecalculate.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CleannessBehaviour, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2324827318271051424, guid: 505eb36c621ea47a0847b24b5f82ddd3, type: 3}
+      propertyPath: onRecalculate.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2676359688449312426, guid: 505eb36c621ea47a0847b24b5f82ddd3, type: 3}
+      propertyPath: attractivenessMod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2676359688449312426, guid: 505eb36c621ea47a0847b24b5f82ddd3, type: 3}
+      propertyPath: minAttractiveness
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4011499035890803430, guid: 505eb36c621ea47a0847b24b5f82ddd3, type: 3}
+      propertyPath: rent
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6082056803679877882, guid: 505eb36c621ea47a0847b24b5f82ddd3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

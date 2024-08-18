@@ -7,8 +7,11 @@ using UnityEngine.Events;
 public abstract class CountUI : MonoBehaviour
 {
     [Foldout("Events")] public UnityEvent<float> onUpdate;
-    
-    public abstract void UpdateUI(int count);
+
+    public virtual void UpdateUI(int count)
+    {
+        onUpdate.Invoke(count);
+    }
     public virtual void UpdateUI(float count){
         UpdateUI(Mathf.RoundToInt(count));
     }

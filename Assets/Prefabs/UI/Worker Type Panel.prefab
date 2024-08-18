@@ -301,10 +301,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1649147861048293083}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -75, y: 0}
-  m_SizeDelta: {x: 130, y: 100}
+  m_SizeDelta: {x: 130, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2591276933716210097
 CanvasRenderer:
@@ -774,7 +774,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7bf16c8a74e4b268a12ec163bbc896c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  workerType: {fileID: 11400000, guid: 5ab1bd77bbe4741b18d11e23e49d0c90, type: 2}
   workersTitle: {fileID: 6860378179064145201}
   description: {fileID: 6801298218759351149}
   salary: {fileID: 8476005456843675194}

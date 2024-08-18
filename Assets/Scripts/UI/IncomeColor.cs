@@ -17,7 +17,7 @@ public class IncomeColor : MonoBehaviour
         textUI.onUpdate.AddListener(UpdateColor);
     }
 
-    void UpdateColor(float arg0)
+    public void UpdateColor(float arg0)
     {
         text.color = GetColor(arg0);
     }

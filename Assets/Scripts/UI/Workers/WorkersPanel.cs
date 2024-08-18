@@ -8,15 +8,18 @@ using UnityEngine.Events;
 
 public class WorkersPanel : MonoBehaviour
 {
-    List<WorkerTypePanel> panels;
-
+    [Required] [SerializeField] ObjectsFactory objectsFactory;
+    
     [Foldout("Events")] public UnityEvent<Worker> onClickEvent = new ();
     void Awake()
     {
-        panels = new List<WorkerTypePanel>(GetComponentsInChildren<WorkerTypePanel>());
-        foreach (var panel in panels){
-            panel.onClickEvent.AddListener(onClickEvent.Invoke);
-        }
+        objectsFactory.onCreateObject.AddListener(OnCreateObject);
+    }
+
+    void OnCreateObject(GameObject arg0)
+    {
+        var panel = arg0.GetComponent<WorkerTypePanel>();
+        panel.onClickEvent.AddListener(onClickEvent.Invoke);
     }
 
     void Start()
@@ -27,8 +30,15 @@ public class WorkersPanel : MonoBehaviour
     public void ShowWorkers(Workers workers)
     {
         Show();
-        foreach (var panel in panels){
-            panel.SetupPanel(workers.GetWorkersOfType(panel.GetWorkerType()));
+        var workerTypes = workers.GetWorkersByType();
+        objectsFactory.SetCount(workerTypes.Count);
+        var panels = objectsFactory.GetObjects();
+        var types = new List<WorkerType>(workerTypes.Keys);
+        for (int i = 0; i < panels.Count; i++)
+        {
+            var panel = panels[i].GetComponent<WorkerTypePanel>();
+            var workerType = types[i];
+            panel.SetupPanel(workerTypes[workerType], workerType);
         }
     }
 

@@ -1,12 +1,15 @@
 using System;
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Worker : MonoBehaviour, IStoreObject
 { 
     [SerializeField][Required] WorkerType workerType;
     [SerializeField] Optional<int> daysTillFire;
 
+    [Foldout("Events")] public UnityEvent<Worker> onRemoveEvent = new ();
+    
     void Awake()
     {
         var spriteRenderer = GetComponentInChildren<SpriteRenderer>();
@@ -45,6 +48,7 @@ public class Worker : MonoBehaviour, IStoreObject
 
     public void Remove()
     {
+        onRemoveEvent.Invoke(this);
         Destroy(gameObject);
     }
 }

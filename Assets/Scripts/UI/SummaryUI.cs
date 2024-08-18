@@ -10,7 +10,7 @@ public class SummaryUI : MonoBehaviour
     [Required][SerializeField] TextUI customersServedUI;
     [Required][SerializeField] TextUI averageSpendingUI;
     [Required][SerializeField] TextUI workersSalaryUI;
-    [Required] [SerializeField] TextUI rentUI;
+    // [Required] [SerializeField] TextUI rentUI;
     [Required][SerializeField] TextUI revenueUI;
     [Required][SerializeField] TextUI costsUI;
     [Required][SerializeField] TextUI incomeUI;
@@ -30,7 +30,7 @@ public class SummaryUI : MonoBehaviour
         customersServedUI.UpdateUI(summary.customersServed);
         averageSpendingUI.UpdateUI(summary.averageSpending);
         workersSalaryUI.UpdateUI(summary.workersSalary);
-        rentUI.UpdateUI(summary.rent);
+        // rentUI.UpdateUI(summary.rent);
         revenueUI.UpdateUI(summary.revenue);
         costsUI.UpdateUI(summary.costs);
         incomeUI.UpdateUI(summary.income);

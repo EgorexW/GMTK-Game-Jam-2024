@@ -30,6 +30,7 @@ public class ObjectsUI : CountUI
 
     public override void UpdateUI(int count)
     {
+        base.UpdateUI(count);
         SetCount(count);
     }
 

@@ -28,9 +28,9 @@ public class WaypointCollection : MonoBehaviour
         return waypointsOfType.Random();
     }
 
-    public List<Waypoint> GetWaypointsOfType(WaypointType type)
+    public List<Waypoint> GetWaypointsOfType(WaypointType type, bool ignoreReserved = false)
     {
-        if (!type.reserveable){
+        if (!type.reserveable || ignoreReserved){
             return waypointsByType[type];
         }
         var availableWaypoints = new List<Waypoint>();

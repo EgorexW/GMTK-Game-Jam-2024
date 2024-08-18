@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class StoreCleanness : MonoBehaviour
 {
@@ -8,9 +9,12 @@ public class StoreCleanness : MonoBehaviour
     
     [ReadOnly][SerializeField] float storeCleanness;
 
+    [Foldout("Events")] public UnityEvent<float> onRecalculate;
+
     public float Recalculate(List<IStoreObject> storeObjects)
     {
         storeCleanness = Calculate(storeObjects);
+        onRecalculate.Invoke(storeCleanness);
         return storeCleanness;
     }
 

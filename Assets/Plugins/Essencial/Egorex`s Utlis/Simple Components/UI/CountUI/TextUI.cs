@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using TMPro;
 using NaughtyAttributes;
+using UnityEngine.Events;
 
 #if UNITY_EDITOR
 #endif
@@ -18,7 +19,7 @@ public class TextUI : CountUI
     [SerializeField][Required] TextMeshProUGUI text;
 
     string format;
-    
+
     protected virtual void Awake()
     {
         format = text.text;
@@ -35,6 +36,7 @@ public class TextUI : CountUI
         count += valueModifier;
         count = Mathf.Round(count * Mathf.Pow(10, -zeros)) / Mathf.Pow(10, -zeros);
         var textToShow = format.Replace(STR_TO_SUBSTITUTE, count.ToString());
+        onUpdate.Invoke(count);
         UpdateUI(textToShow);
     }
     public void UpdateUI(string textToShow){

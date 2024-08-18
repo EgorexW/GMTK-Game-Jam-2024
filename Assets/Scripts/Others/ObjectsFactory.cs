@@ -45,9 +45,10 @@ public class ObjectsFactory : MonoBehaviour
     
     public void RemoveObject(GameObject obj = null){
         if (obj == null){
+            if (objects.Count == 0) return;
             obj = objects[^1];
         }
-        if (obj == null || !objects.Contains(obj)){
+        else if (!objects.Contains(obj)){
             return;
         }
         Destroy(obj);

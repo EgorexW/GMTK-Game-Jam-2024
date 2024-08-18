@@ -45,13 +45,13 @@ public class InfrastructurePanel : MonoBehaviour
         infrastructure = infrastructureTmp;
         var infrastructureType = infrastructure.GetInfrastructureType();
         titleText.text = infrastructureType.name;
-        if (!infrastructureType.sellValue){
+        if (!infrastructure.GetSellValue()){
             button.interactable = false;
             sellText.UpdateUI(CANT_SELL_TEXT);
         }
         else{
             button.interactable = true;
-            sellText.UpdateUI(infrastructureType.sellValue);
+            sellText.UpdateUI(infrastructure.GetSellValue());
         }
         descriptionText.text = infrastructureType.description;
     }
