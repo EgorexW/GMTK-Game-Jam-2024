@@ -44,6 +44,7 @@ public class Store : MonoBehaviour
         workers.DayPassed();
         infrastructure.DayPassed();
         daySummaryCalculator.DayPassed();
+        storeClosing.DayPassed();
     }
 
     public void CloseStore()

@@ -297,6 +297,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3479795452953967836}
   - component: {fileID: 2324827318271051424}
+  - component: {fileID: 3948866756805531958}
+  - component: {fileID: 4847379455724350272}
   m_Layer: 0
   m_Name: Store Cleanness
   m_TagString: Untagged
@@ -331,12 +333,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5a679ca50664d82a4d1a486b6172241, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseCleanningValue: 5
+  baseCleanningValue: 2
   storeCleanness: 0
   onRecalculate:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3948866756805531958}
         m_TargetAssemblyTypeName: CleannessBehaviour, Assembly-CSharp
         m_MethodName: SetTargetCleanness
         m_Mode: 0
@@ -348,3 +350,38 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3948866756805531958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9048518012610888918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f66d20fb3e55474dba490d204de5de2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onDestroy:
+    m_PersistentCalls:
+      m_Calls: []
+  objectsFactory: {fileID: 4847379455724350272}
+  waypoints: {fileID: 0}
+  changeTime: 60
+  waypointType: {fileID: 11400000, guid: f38c85289e40c4f80a43646d1a23a29f, type: 2}
+--- !u!114 &4847379455724350272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9048518012610888918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a9b0594c887146908749a59e210df28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 7829388314825628979, guid: 0e71d64c17ce44691ae213f081cc9ac2, type: 3}
+  onCreateObject:
+    m_PersistentCalls:
+      m_Calls: []

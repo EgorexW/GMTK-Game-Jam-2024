@@ -7,15 +7,20 @@ using UnityEngine.Serialization;
 public class CleannessBehaviour : GameBehaviour
 {
     [Required][SerializeField] ObjectsFactory objectsFactory;
-    [Required][SerializeField] WaypointCollection waypoints;
 
     [SerializeField] float changeTime = 60;
     [SerializeField] WaypointType waypointType;
     
+    WaypointCollection waypoints;
     float spawnDelay;
     float timeSinceLastSpawn;
     bool positiveChange;
     List<Waypoint> unusedPositions;
+
+    void Awake()
+    {
+        waypoints = General.GetRootComponent<WaypointCollection>(transform);
+    }
 
     public void SetTargetCleanness(float targetCleanness)
     {

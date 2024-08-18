@@ -261,74 +261,6 @@ Transform:
   - {fileID: 1634950184100442560}
   m_Father: {fileID: 3601922404290824432}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4539260402774761221
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1318754058870909670}
-  - component: {fileID: 1343599317069534163}
-  - component: {fileID: 3849449909890088925}
-  m_Layer: 0
-  m_Name: Cleanness
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1318754058870909670
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4539260402774761221}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2046244501417747400}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1343599317069534163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4539260402774761221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f66d20fb3e55474dba490d204de5de2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onDestroy:
-    m_PersistentCalls:
-      m_Calls: []
-  objectsFactory: {fileID: 3849449909890088925}
-  waypoints: {fileID: 8891332573786166124}
-  changeTime: 60
-  waypointType: {fileID: 11400000, guid: f38c85289e40c4f80a43646d1a23a29f, type: 2}
---- !u!114 &3849449909890088925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4539260402774761221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a9b0594c887146908749a59e210df28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 7829388314825628979, guid: 0e71d64c17ce44691ae213f081cc9ac2, type: 3}
-  onCreateObject:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &5137888711804252486
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,7 +527,6 @@ Transform:
   - {fileID: 944289736079535727}
   - {fileID: 5830259371935122764}
   - {fileID: 6118591929280620882}
-  - {fileID: 1318754058870909670}
   - {fileID: 5621311215883147840}
   - {fileID: 124092664501480635}
   m_Father: {fileID: 0}
@@ -1375,6 +1306,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2046244501417747400}
     m_Modifications:
+    - target: {fileID: 3948866756805531958, guid: 505eb36c621ea47a0847b24b5f82ddd3, type: 3}
+      propertyPath: waypoints
+      value: 
+      objectReference: {fileID: 8891332573786166124}
     - target: {fileID: 6082056803679877882, guid: 505eb36c621ea47a0847b24b5f82ddd3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2969,7 +2904,7 @@ PrefabInstance:
     - target: {fileID: 7376136575926052405, guid: 071b5ec251c9849d1a16d72e10405416, type: 3}
       propertyPath: onRemoveEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2937347177207333564}
     - target: {fileID: 7376136575926052405, guid: 071b5ec251c9849d1a16d72e10405416, type: 3}
       propertyPath: onRemoveEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -2980,7 +2915,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7376136575926052405, guid: 071b5ec251c9849d1a16d72e10405416, type: 3}
       propertyPath: onRemoveEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameplayLoop, Assembly-CSharp
+      value: Store, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7376136575926052405, guid: 071b5ec251c9849d1a16d72e10405416, type: 3}
       propertyPath: onRemoveEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName

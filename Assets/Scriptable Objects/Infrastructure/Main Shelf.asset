@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   attractivenessImpact:
-    baseValue: 10
+    baseValue: 0
   clientsCapImpact:
     cashValue: 0
     cashierValue: 0
   revenueImpact:
     baseValue: 0
   cleannessImpact:
-    dirtinessArea: 3
+    dirtinessArea: 0
     cleaningValue: 0
   description: Most basic products
   sellValue:

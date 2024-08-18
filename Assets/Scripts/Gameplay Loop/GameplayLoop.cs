@@ -18,6 +18,7 @@ public class GameplayLoop : MonoBehaviour
     bool running;
 
     [Foldout("Events")] public UnityEvent<DaySummary> onDayEnd;
+    [Foldout("Events")] public UnityEvent<CloseStoreSummary> onCloseStore;
 
     void Awake()
     {
@@ -33,6 +34,7 @@ public class GameplayLoop : MonoBehaviour
 
     void End(CloseStoreSummary summary)
     {
+        onCloseStore.Invoke(summary);
         running = false;
     }
     void BeginMorning()
