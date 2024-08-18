@@ -22,6 +22,6 @@ MonoBehaviour:
     baseValue: 0
   cleannessImpact:
     dirtinessArea: 0
-    cleaningValue: 10
+    cleaningValue: 7
   description: The more infrastructure you have, the more cleaners you need
   salary: 60

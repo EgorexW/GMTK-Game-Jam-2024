@@ -136,6 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8507f1a2916aa4f70af2eb9be349ab45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseAttractiveness: 10
   attractiveness: 19
 --- !u!1 &4009975563359820058
 GameObject:
@@ -333,7 +334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5a679ca50664d82a4d1a486b6172241, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseCleanningValue: 2
+  baseCleanningValue: 5
   storeCleanness: 0
   onRecalculate:
     m_PersistentCalls:
@@ -366,7 +367,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   objectsFactory: {fileID: 4847379455724350272}
-  waypoints: {fileID: 0}
   changeTime: 60
   waypointType: {fileID: 11400000, guid: f38c85289e40c4f80a43646d1a23a29f, type: 2}
 --- !u!114 &4847379455724350272
