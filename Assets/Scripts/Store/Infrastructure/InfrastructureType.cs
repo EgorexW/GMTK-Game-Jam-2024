@@ -4,6 +4,6 @@ using UnityEngine;
 public class InfrastructureType : StoreObjectType
 {
     public Optional<float> sellValue;
-    public float valueLossPerDay = 0.05f;
-    public float minOriginalValue = 0.5f;
+    public float valueLossPerDay = 0.1f;
+    public float minOriginalValue = 0.3f;
 }

@@ -42,6 +42,11 @@ public class DaySummaryCalculator : MonoBehaviour
         };
         return summary;
     }
+
+    public void DayPassed()
+    {
+        clientsPerDay.DayPassed();
+    }
 }
 
 public struct DaySummary

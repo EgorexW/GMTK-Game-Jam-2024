@@ -14,7 +14,12 @@ public class BehaviourRunner : MonoBehaviour, IBehaviourRunner
 
     void AddChildren()
     {
-        foreach (var behaviour in GetComponentsInChildren<GameBehaviour>()){
+        AddChildren(General.GetObjectRoot(transform).gameObject);
+    }
+
+    void AddChildren(GameObject parent)
+    {
+        foreach (var behaviour in parent.GetComponentsInChildren<GameBehaviour>()){
             AddBehaviour(behaviour);
         }
     }

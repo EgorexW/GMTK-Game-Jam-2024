@@ -8,8 +8,6 @@ public class StoreClosing : MonoBehaviour
     
     float moneyMultiplier = 1;
 
-    [Foldout("Events")] public UnityEvent<CloseStoreSummary> onCloseStore;
-
     public CloseStoreSummary CloseStore(Store store)
     {
         var summary = new CloseStoreSummary{
@@ -19,7 +17,6 @@ public class StoreClosing : MonoBehaviour
         store.GetMoney().MultiplyValue(moneyMultiplier);
         summary.infrastructureSold = store.GetInfrastructure().SellAll();
         summary.overallMoney = store.GetMoney().GetValue();
-        onCloseStore.Invoke(summary);
         return summary;
     }
 

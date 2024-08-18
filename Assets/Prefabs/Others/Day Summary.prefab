@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e12106df70a54d6784f92031c1080e30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseRevenuePerClient: 15
+  baseRevenuePerClient: 20
   revenuePerClient: 22.5
 --- !u!1 &3665195860318625494
 GameObject:
@@ -227,8 +227,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   decreasePerDay: 0.1
-  minAttractiveness: 0.1
-  attractivenessMod: 1.2
+  minAttractiveness: 0.2
+  attractivenessMod: 1
   clientsPerDay: 0
 --- !u!1 &8820645637795909711
 GameObject:
@@ -286,7 +286,7 @@ MonoBehaviour:
   revenuePerClient: {fileID: 199218555560602210}
   storeCleanness: {fileID: 2324827318271051424}
   workersSalary: {fileID: 2461081220856994153}
-  rent: 150
+  rent: 0
 --- !u!1 &9048518012610888918
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,3 +333,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseCleanningValue: 5
   storeCleanness: 0
+  onRecalculate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: CleannessBehaviour, Assembly-CSharp
+        m_MethodName: SetTargetCleanness
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

@@ -10,9 +10,7 @@ using UnityEngine.Serialization;
 public class GameplayLoop : MonoBehaviour
 {
     [GetComponentInChildren][SerializeField] Day day;
-    [GetComponentInChildren][SerializeField] DaySummaryCalculator daySummaryCalculator;
     [GetComponentInChildren][SerializeField] Morning morning;
-    [GetComponentInChildren][SerializeField] StoreClosing storeClosing;
     
     [Required][SerializeField] Store store;
     
@@ -23,7 +21,7 @@ public class GameplayLoop : MonoBehaviour
 
     void Awake()
     {
-        storeClosing.onCloseStore.AddListener(End);
+        store.onCloseStore.AddListener(End);
         morning.onEndMorning.AddListener(OnMorningEnd);
         day.onDayEnd.AddListener(OnDayEnd);
     }
@@ -50,8 +48,8 @@ public class GameplayLoop : MonoBehaviour
     public void RunDay()
     {
         if (!running) return;
-        lastSummary = daySummaryCalculator.CalculateSummary(store);
-        day.RunDay(lastSummary);
+        lastSummary = store.GetDaySummaryCalculator().CalculateSummary(store);
+        day.RunDay(store, lastSummary);
     }
 
     void OnDayEnd()
@@ -65,10 +63,5 @@ public class GameplayLoop : MonoBehaviour
         store.EndDay(lastSummary);
         onDayEnd.Invoke(lastSummary);
         BeginMorning();
-    }
-
-    public void CloseStore()
-    {
-        storeClosing.CloseStore(store);
     }
 }

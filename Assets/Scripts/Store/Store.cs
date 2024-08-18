@@ -9,6 +9,16 @@ public class Store : MonoBehaviour
     [GetComponentInChildren][SerializeField] Workers workers;
     [GetComponentInChildren][SerializeField] Money money;
     [GetComponentInChildren][SerializeField] Infrastructure infrastructure;
+    [GetComponentInChildren][SerializeField] DaySummaryCalculator daySummaryCalculator;
+    [GetComponentInChildren][SerializeField] StoreClosing storeClosing;
+    [GetComponentInChildren][SerializeField] StoreRunner storeRunner;
+    
+    [Foldout("Events")] public UnityEvent<CloseStoreSummary> onCloseStore;
+
+    public DaySummaryCalculator GetDaySummaryCalculator()
+    {
+        return daySummaryCalculator;
+    }
 
     public List<IStoreObject> GetStoreObjects()
     {
@@ -33,6 +43,17 @@ public class Store : MonoBehaviour
         money.ModifyValue(summary.income);
         workers.DayPassed();
         infrastructure.DayPassed();
+        daySummaryCalculator.DayPassed();
+    }
+
+    public void CloseStore()
+    {
+        var summary = storeClosing.CloseStore(this);
+        onCloseStore.Invoke(summary);
+    }
+
+    public StoreRunner GetStoreRunner()
+    {
+        return storeRunner;
     }
 }
-

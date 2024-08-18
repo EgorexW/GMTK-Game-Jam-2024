@@ -27,3 +27,5 @@ MonoBehaviour:
   sellValue:
     enabled: 1
     value: 50
+  valueLossPerDay: 0.1
+  minOriginalValue: 0.3

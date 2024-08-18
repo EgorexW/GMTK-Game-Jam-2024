@@ -8,8 +8,6 @@ using UnityEngine.Events;
 public class Day : MonoBehaviour
 {
     [Required][SerializeField] DayUI dayUI;
-    [Required][SerializeField] BehaviourRunner behaviourRunner;
-    [Required] [SerializeField] ObjectsFactory customersSpawner;
     [SerializeField] float dayTime = 30;
 
     [SerializeField] float baseTimeMod = 2;
@@ -19,6 +17,7 @@ public class Day : MonoBehaviour
 
     float dayTimeElapsed;
     bool dayRunning;
+    StoreRunner storeRunner;
 
     void Awake()
     {
@@ -30,12 +29,11 @@ public class Day : MonoBehaviour
         dayUI.Hide();
     }
 
-    public void RunDay(DaySummary lastSummary)
+    public void RunDay(Store store, DaySummary lastSummary)
     {
-        customersSpawner.Clear();
-        customersSpawner.SetCount(lastSummary.totalCustomers);
+        storeRunner = store.GetStoreRunner();
+        storeRunner.RunStore(lastSummary);
         dayUI.Show();
-        behaviourRunner.Run();
         dayRunning = true;
         dayTimeElapsed = 0;
     }
@@ -53,8 +51,8 @@ public class Day : MonoBehaviour
 
     void EndDay()
     {
+        storeRunner.EndRun();
         dayUI.Hide();
-        behaviourRunner.End();
         dayRunning = false;
         onDayEnd.Invoke();
     }
@@ -67,6 +65,6 @@ public class Day : MonoBehaviour
     public void ChangeTimeMod(float newValue)
     {
         timeMod = newValue * baseTimeMod;
-        behaviourRunner.timeMod = timeMod;
+        storeRunner.ChangeTimeMod(timeMod);
     }
 }

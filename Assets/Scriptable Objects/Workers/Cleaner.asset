@@ -23,5 +23,5 @@ MonoBehaviour:
   cleannessImpact:
     dirtinessArea: 0
     cleaningValue: 10
-  description: Cleans the store, customers like clean stores:)
-  salary: 50
+  description: The more infrastructure you have, the more cleaners you need
+  salary: 60
