@@ -55,6 +55,9 @@ public class Workers : MonoBehaviour
     void RemoveWorker(Worker worker)
     {
         workersByType[worker.GetWorkerType()].Remove(worker);
+        if (workersByType[worker.GetWorkerType()].Count == 0){
+            workersByType.Remove(worker.GetWorkerType());
+        }
         workers.Remove(worker);
         worker.Remove();
     }

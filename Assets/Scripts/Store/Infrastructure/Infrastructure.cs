@@ -41,7 +41,6 @@ public class Infrastructure : MonoBehaviour
     {
         var sellValue = infrastructureObject.GetSellValue();
         if (!sellValue){
-            Debug.LogWarning("Can't sell");
             return 0;
         }
         money.ModifyValue(sellValue);
@@ -54,13 +53,16 @@ public class Infrastructure : MonoBehaviour
     {
         infrastructureObjects.Remove(infrastructureObject);
         infrastructureByType[infrastructureObject.GetInfrastructureType()].Remove(infrastructureObject);
+        if (infrastructureByType[infrastructureObject.GetInfrastructureType()].Count == 0){
+            infrastructureByType.Remove(infrastructureObject.GetInfrastructureType());
+        }
         onRemoveInfrastructure.Invoke(infrastructureObject);
     }
 
     public float SellAll()
     {
         var value = 0f;
-        foreach (var infrastructureObject in infrastructureObjects){
+        foreach (var infrastructureObject in infrastructureObjects.Copy()){
             value += Sell(infrastructureObject);
         }
         return value;

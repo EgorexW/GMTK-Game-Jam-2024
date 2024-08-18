@@ -16,6 +16,7 @@ public class StoreClosedUI : MonoBehaviour
 
     public void ShowSummary(CloseStoreSummary summary)
     {
+        Show();
         moneyUI.UpdateUI(summary.money);
         infrastructureSoldUI.UpdateUI(summary.infrastructureSold);
         moneyMultiplierUI.UpdateUI(summary.moneyMultiplier);
