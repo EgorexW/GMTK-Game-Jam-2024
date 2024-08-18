@@ -38,7 +38,7 @@ public class GameplayLoop : MonoBehaviour
     void BeginMorning()
     {
         if (!running) return; 
-        morning.BeginMorning();
+        morning.BeginMorning(store);
     }
     void OnMorningEnd()
     {

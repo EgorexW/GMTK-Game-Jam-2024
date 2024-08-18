@@ -4,7 +4,8 @@ using UnityEngine;
 public class InfrastructurePanelLink : MonoBehaviour
 {
     [Required][SerializeField] InfrastructurePanel panel;
-    [Required] [SerializeField] Infrastructure infrastructure;
+    
+    Infrastructure infrastructure;
     
     public void OnInfrastructureClicked(InfrastructureObject infrastructureObject)
     {
@@ -14,5 +15,10 @@ public class InfrastructurePanelLink : MonoBehaviour
     {
         infrastructure.Sell(clickedInfrastructureObject);
         panel.Hide();
+    }
+
+    public void SetInfrastructure(Infrastructure newInfrastructure)
+    {
+        infrastructure = newInfrastructure;
     }
 }

@@ -5,9 +5,14 @@ using UnityEngine;
 
 public class WorkerPanelLink : MonoBehaviour
 {
-    [Required] [SerializeField] Workers workers;
     [Required] [SerializeField] WorkersPanel workersPanel;
     
+    Workers workers;
+
+    public void SetWorkers(Workers newWorkers)
+    {
+        workers = newWorkers;
+    }
     public void ShowWorkerPanel()
     {
         workersPanel.ShowWorkers(workers);

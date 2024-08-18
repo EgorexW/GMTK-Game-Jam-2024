@@ -33,6 +33,7 @@ public class Day : MonoBehaviour
     {
         storeRunner = store.GetStoreRunner();
         storeRunner.RunStore(lastSummary);
+        storeRunner.ChangeTimeMod(timeMod);
         dayUI.Show();
         dayRunning = true;
         dayTimeElapsed = 0;
@@ -65,6 +66,6 @@ public class Day : MonoBehaviour
     public void ChangeTimeMod(float newValue)
     {
         timeMod = newValue * baseTimeMod;
-        storeRunner.ChangeTimeMod(timeMod);
+        if (storeRunner != null) storeRunner.ChangeTimeMod(timeMod);
     }
 }

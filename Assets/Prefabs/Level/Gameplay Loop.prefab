@@ -99,7 +99,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   day: {fileID: 3788655020581990761}
   morning: {fileID: 3869431004618896544}
-  storeClosing: {fileID: 0}
   store: {fileID: 0}
   onDayEnd:
     m_PersistentCalls:
@@ -222,6 +221,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   morningUI: {fileID: 0}
+  workerPanelLink: {fileID: 9128336841098423721}
+  infrastructurePanelLink: {fileID: 1007258068870261080}
   onEndMorning:
     m_PersistentCalls:
       m_Calls:
@@ -282,7 +283,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b96b743a062b942ad9895adc03e7b31f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  workers: {fileID: 0}
   workersPanel: {fileID: 0}
 --- !u!114 &1007258068870261080
 MonoBehaviour:
@@ -297,4 +297,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 0}
-  infrastructure: {fileID: 0}

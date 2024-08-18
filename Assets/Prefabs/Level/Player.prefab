@@ -221,6 +221,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3409110341193095587}
     - target: {fileID: 3869431004618896544, guid: 540e04e63369645f1933785bf9032399, type: 3}
+      propertyPath: infrastructurePanelLink
+      value: 
+      objectReference: {fileID: 7412666744310030447}
+    - target: {fileID: 3869431004618896544, guid: 540e04e63369645f1933785bf9032399, type: 3}
       propertyPath: onEndMorning.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8451092921113958854}
