@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e0150f401cdf404fb418d5cdbab9e68, type: 3}
   m_Name: Cleaner
   m_EditorClassIdentifier: 
-  sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  sprite: {fileID: 21300000, guid: 5fe5bb9954355417195055f05637ef72, type: 3}
   attractivenessImpact:
     baseValue: 2
   clientsCapImpact:

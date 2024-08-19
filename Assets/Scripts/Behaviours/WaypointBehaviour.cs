@@ -5,20 +5,22 @@ using Nrjwolf.Tools.AttachAttributes;
 using Pathfinding;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(Seeker), typeof(AIPath))]
 public class WaypointBehaviour : GameBehaviour
 {
-    const float MIN_TIME_TO_WAIT = 0.1f;
-    const float DIS_TO_REACH_WAYPOINT = 0.2f;
-    const float NO_WAYPOINT_RETRY_TIME = 0.5f;
     
     [SerializeField] [GetComponent] Seeker seeker;
     [SerializeField] [GetComponent] AIPath aiPath;
     
     [Required] [SerializeField] Transform transformToMove;
     [SerializeField] WaypointCollection waypointCollection;
+    
+    [SerializeField] float minTimeToWait = 0.1f;
+    [SerializeField] float disToReachWaypoint = 0.2f;
+    [SerializeField] float noWaypointRetryTime = 0.5f;
     
     [SerializeField] List<ObjectWithValue<WaypointType>> waypointsToFollow;
     [SerializeField] float waitTimeVariance = 1;
@@ -86,7 +88,7 @@ public class WaypointBehaviour : GameBehaviour
                 transformToMove.position = nextPosition;
                 transformToMove.rotation = nextRotation;
                 var dis = Vector3.Distance(nextWaypoint.transform.position, transform.position);
-                if (!(dis < DIS_TO_REACH_WAYPOINT)) return;
+                if (!(dis < disToReachWaypoint)) return;
                 ReachedWaypoint();
                 break;
             default:
@@ -102,7 +104,7 @@ public class WaypointBehaviour : GameBehaviour
         }
         timeToWait = waypointsToFollow[currentIndex];
         timeToWait += Random.Range(-waitTimeVariance, waitTimeVariance);
-        timeToWait = Mathf.Max(MIN_TIME_TO_WAIT, timeToWait);
+        timeToWait = Mathf.Max(minTimeToWait, timeToWait);
         state = State.Waiting;
     }
 
@@ -137,7 +139,7 @@ public class WaypointBehaviour : GameBehaviour
         nextWaypoint = waypointCollection.GetWaypointOfType(waypointType);
         if (nextWaypoint == null){
             state = State.NoWaypoint;
-            timeToWait = NO_WAYPOINT_RETRY_TIME;
+            timeToWait = noWaypointRetryTime;
             return;
         }
         state = State.Moving;

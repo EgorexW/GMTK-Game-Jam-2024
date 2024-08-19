@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e0150f401cdf404fb418d5cdbab9e68, type: 3}
   m_Name: Manager
   m_EditorClassIdentifier: 
-  sprite: {fileID: -9095717837082945937, guid: bd3cb4af8406d4436a2ae8c2aafe1f8d, type: 3}
+  sprite: {fileID: 21300000, guid: fe77de61ad9f049a9b93c9b208460a73, type: 3}
   attractivenessImpact:
     baseValue: 0
   clientsCapImpact:

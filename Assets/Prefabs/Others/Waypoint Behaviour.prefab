@@ -46,13 +46,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9b599d2f2f24ca795f8d50fe2dd1702, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onDestroy:
+    m_PersistentCalls:
+      m_Calls: []
   seeker: {fileID: 2353414685357440673}
   aiPath: {fileID: 1777803315391674162}
   transformToMove: {fileID: 0}
   waypointCollection: {fileID: 0}
   waypointsToFollow: []
+  waitTimeVariance: 1
   onFinish: 0
   endWaypoint: {fileID: 11400000, guid: 753f5ba5bf6804f7bb4c8dddb386e862, type: 2}
+  state: 3
   nextWaypoint: {fileID: 0}
   timeToWait: 0
 --- !u!114 &2353414685357440673
@@ -108,7 +113,7 @@ MonoBehaviour:
   repathRateCompatibility: NaN
   canSearchCompability: 0
   orientation: 1
-  enableRotation: 0
+  enableRotation: 1
   autoRepath:
     mode: 2
     interval: 0.5

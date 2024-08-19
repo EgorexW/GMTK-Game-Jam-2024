@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e0150f401cdf404fb418d5cdbab9e68, type: 3}
   m_Name: Cashier
   m_EditorClassIdentifier: 
-  sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  sprite: {fileID: 21300000, guid: c71c9162432e64857b51936f2e7fbbfb, type: 3}
   attractivenessImpact:
     baseValue: 0
   clientsCapImpact:
