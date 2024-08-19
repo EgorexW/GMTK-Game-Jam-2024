@@ -8,6 +8,7 @@ public class StoreClosedUI : MonoBehaviour
     [Required][SerializeField] TextUI infrastructureSoldUI;
     [Required][SerializeField] TextUI moneyMultiplierUI;
     [Required] [SerializeField] TextUI overallMoneyUI;
+    [Required] [SerializeField] ShowLeaderboard showLeaderboard;
     
     void Awake()
     {
@@ -21,6 +22,7 @@ public class StoreClosedUI : MonoBehaviour
         infrastructureSoldUI.UpdateUI(summary.infrastructureSold);
         moneyMultiplierUI.UpdateUI(summary.moneyMultiplier);
         overallMoneyUI.UpdateUI(summary.overallMoney);
+        showLeaderboard.Show();
     }
     public void Show()
     {

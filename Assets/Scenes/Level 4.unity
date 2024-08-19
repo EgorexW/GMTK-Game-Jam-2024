@@ -1225,6 +1225,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -2.25
       objectReference: {fileID: 0}
+    - target: {fileID: 1848757700454558219, guid: 602953591a63745cf976931929d13260, type: 3}
+      propertyPath: dayTime
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 1880948156847179709, guid: 602953591a63745cf976931929d13260, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.25

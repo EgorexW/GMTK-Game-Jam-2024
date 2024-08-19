@@ -779,6 +779,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2937347177207333564, guid: b293412f0eb374a39838e32bb0f3e951, type: 3}
+      propertyPath: onCloseStore.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2937347177207333564, guid: b293412f0eb374a39838e32bb0f3e951, type: 3}
+      propertyPath: onCloseStore.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1063374724667480239}
+    - target: {fileID: 2937347177207333564, guid: b293412f0eb374a39838e32bb0f3e951, type: 3}
+      propertyPath: onCloseStore.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2937347177207333564, guid: b293412f0eb374a39838e32bb0f3e951, type: 3}
+      propertyPath: onCloseStore.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SubmitScore
+      objectReference: {fileID: 0}
+    - target: {fileID: 2937347177207333564, guid: b293412f0eb374a39838e32bb0f3e951, type: 3}
+      propertyPath: onCloseStore.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SubmitScoreScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2937347177207333564, guid: b293412f0eb374a39838e32bb0f3e951, type: 3}
+      propertyPath: onCloseStore.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3548767210068523275, guid: b293412f0eb374a39838e32bb0f3e951, type: 3}
       propertyPath: data.dataString
       value: UEsDBBQAAAgIAAAIIeyWGYe2WQIAABMFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1z2jAQ/SuMzk3HENKU3lqHkB6SMKGdXHxZrDXWIEsefQRIhv/elWxjxzM9sbx9u/v2Q/5gQtkac6fNygj+qDmyHxMWbPZl0jsf8Ag7rTbiHTvOq+CuDCSInBdwQhM+DWFWV+iMyH+qnQzkhECvRKFNteQ7TLV1luACpEVyGe1CtCLoY8KO9HO1CCEnsma3wXona5FMzmTmqByannrdEjtaw/Iql1DVyIPknjy7pG1oipppGcnXWciupRS21cLcqY69plBbT50QgQug3qKA0GqJYle6kHAY/FwUFl0rysDpThgaUZOV/dLN3Cqw+0bZG0gf6lxNo6gm5+P/3IXR1UNXdpqEEq4U+f4FTjlYN5jrEL77rNurA8g9bCW+lqie9Mporzg5nfEh1Fuc3fV/L52lJeb7Hm+kjkBf9wNPRtsJPZxj88dUimobBz9vgI3Ucdxx92hoNb9JcLwM28omNKj4a/EP7IYn1DruhbGOXC1dBXlb7U2gsmWcWejGu1QbhRFuRdeoQLrTmtK48QZHvkHZkecewmNpi7e+7g2MQiLc85Nk5Frrw2VZttSHR7Tls3dSKOxFB8cTzSnVSjUHNpxJF7bxpoB8ELbzgn8+LYYwXxTb4nte4AKuk/nVDd/eAHy73vL5dLu4nbN4e0JRnyDXjdB2PLQ11SdXdGfdN2SyMlDHY+cGDivxXunByIUq9CY3iOq5yXARjoaK0LPkSy5oQBt0Tqi4b/aRManzPfLskiiLnS6PzkDWZ8lYLd60C0jG0vjRyFiAL7e8Nvgm8BCKd8nO7PwPUEsDBBQAAAgIAAAIIewMU5enbQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM011FQSi9KLMgoBooYgjilmSkgdrRSaqKJZVpSmkVyWqplorGBia5pSpJpYqKZcVKKiWGSpbmJUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAAAIIeyWGYe2WQIAABMFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAAAIIewMU5enbQAAAHgAAAAJACQAAAAAAAAAAAAAAKYCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAXgMAAAAA
@@ -790,7 +814,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7395773613301788259, guid: b293412f0eb374a39838e32bb0f3e951, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1063374724667480239}
   m_SourcePrefab: {fileID: 100100000, guid: b293412f0eb374a39838e32bb0f3e951, type: 3}
 --- !u!114 &3835365066860016146 stripped
 MonoBehaviour:
@@ -803,6 +830,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4131c37e83784727a30c034d11c7741, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &4364652255271301626 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7395773613301788259, guid: b293412f0eb374a39838e32bb0f3e951, type: 3}
+  m_PrefabInstance: {fileID: 6499060345435512729}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1063374724667480239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4364652255271301626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38719794b29c84831b74f958771f68b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leaderboardID: 10830
 --- !u!4 &5067944289969585233 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2046244501417747400, guid: b293412f0eb374a39838e32bb0f3e951, type: 3}
@@ -813,7 +858,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2937347177207333564, guid: b293412f0eb374a39838e32bb0f3e951, type: 3}
   m_PrefabInstance: {fileID: 6499060345435512729}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 4364652255271301626}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b539c267b2a43408683184c850b089e, type: 3}
