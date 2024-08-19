@@ -23,5 +23,5 @@ MonoBehaviour:
   cleannessImpact:
     dirtinessArea: 0
     cleaningValue: 0
-  description: Keeps the store running
+  description: Fire them to close the store
   salary: 50

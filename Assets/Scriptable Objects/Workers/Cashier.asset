@@ -23,5 +23,5 @@ MonoBehaviour:
   cleannessImpact:
     dirtinessArea: 0
     cleaningValue: 0
-  description: Cashers customers, requires a cash
+  description: Serves customers, works at a cash
   salary: 50

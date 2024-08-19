@@ -23,7 +23,7 @@ MonoBehaviour:
   cleannessImpact:
     dirtinessArea: 2
     cleaningValue: 0
-  description: Allows cashiers to cash customers
+  description: Each cash can serve a couple of customers daily, requires a cashier
   sellValue:
     enabled: 1
     value: 50

@@ -4,10 +4,12 @@ using UnityEngine;
 public class TutorialScreen : MonoBehaviour
 {
     [SerializeField] string prefabName = "Tutorial";
+    [SerializeField] bool autoUpdatePrefabName = true;
     [SerializeField] bool activateOnAwake = true;
 
     void Awake()
     {
+        UpdatePrefabName();
         gameObject.SetActive(false);
         if (activateOnAwake){
             TryToActivate();
@@ -41,8 +43,15 @@ public class TutorialScreen : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    void Reset()
+    void OnValidate()
     {
-        prefabName = gameObject.name;
+        UpdatePrefabName();
+    }
+
+    void UpdatePrefabName()
+    {
+        if (autoUpdatePrefabName){
+            prefabName = gameObject.name;
+        }
     }
 }

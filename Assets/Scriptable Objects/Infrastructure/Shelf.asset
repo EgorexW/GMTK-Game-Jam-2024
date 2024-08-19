@@ -23,7 +23,7 @@ MonoBehaviour:
   cleannessImpact:
     dirtinessArea: 1
     cleaningValue: 0
-  description: Gives more choice to the buyers
+  description: Attracts more customers
   sellValue:
     enabled: 1
     value: 20

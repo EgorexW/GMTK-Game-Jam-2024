@@ -23,5 +23,5 @@ MonoBehaviour:
   cleannessImpact:
     dirtinessArea: 0
     cleaningValue: 0
-  description: Convinces customers to buy more increasing your revenue
+  description: Increases revenue per client
   salary: 40
