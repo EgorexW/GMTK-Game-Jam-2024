@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9113515700271083884}
   - component: {fileID: 8167606485517764849}
   - component: {fileID: 1264670127089909899}
+  - component: {fileID: 5326478560527336979}
   m_Layer: 5
   m_Name: Level button
   m_TagString: Untagged
@@ -151,6 +152,37 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5326478560527336979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3006857060954274857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1130027324
+      Data2: 1226301345
+      Data3: 929749681
+      Data4: -1362043357
+    Path: event:/UI Click
+  Event: 
+  PlayEvent: 19
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &7263225746904405791
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,8 +250,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Level 1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 788a17a76cb9749e69e1cfdb71019610, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 788a17a76cb9749e69e1cfdb71019610, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2e6c9d8d6e62045dab40ffa3821076a6, type: 2}
+  m_sharedMaterial: {fileID: -5468466328293751360, guid: 2e6c9d8d6e62045dab40ffa3821076a6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -243,7 +275,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 118
+  m_fontSize: 18
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

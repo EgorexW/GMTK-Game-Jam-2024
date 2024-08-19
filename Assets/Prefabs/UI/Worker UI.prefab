@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5570969036398922611}
   - component: {fileID: 6113482395637019891}
   - component: {fileID: 8742467940019628468}
+  - component: {fileID: 2208104114170110564}
   m_Layer: 5
   m_Name: Worker UI
   m_TagString: Untagged
@@ -38,7 +39,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 134.375, y: 112.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4569578401190506474
 CanvasRenderer:
@@ -68,8 +69,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: c71c9162432e64857b51936f2e7fbbfb, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -152,6 +153,37 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2208104114170110564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188229570224693976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1130027324
+      Data2: 1226301345
+      Data3: 929749681
+      Data4: -1362043357
+    Path: event:/UI Click
+  Event: 
+  PlayEvent: 19
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &6074889512709278559
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,8 +252,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Leaves in {nr} days
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 788a17a76cb9749e69e1cfdb71019610, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 788a17a76cb9749e69e1cfdb71019610, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2e6c9d8d6e62045dab40ffa3821076a6, type: 2}
+  m_sharedMaterial: {fileID: -5468466328293751360, guid: 2e6c9d8d6e62045dab40ffa3821076a6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -245,7 +277,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26.3
+  m_fontSize: 21.5
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

@@ -42,6 +42,7 @@ public class PlayButton : MonoBehaviour, ISceneGetter
     void Reset()
     {
         levelName = new(GetComponentInChildren<TextMeshProUGUI>());
+        levelName.Enabled = levelName.Value != null;
         if (!TryGetComponent<Button>(out Button button)){
             return;
         }
