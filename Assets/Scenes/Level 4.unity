@@ -1227,7 +1227,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1848757700454558219, guid: 602953591a63745cf976931929d13260, type: 3}
       propertyPath: dayTime
-      value: 90
+      value: 85
       objectReference: {fileID: 0}
     - target: {fileID: 1880948156847179709, guid: 602953591a63745cf976931929d13260, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1847,6 +1847,7 @@ PrefabInstance:
     - {fileID: 9133051092201966340, guid: 602953591a63745cf976931929d13260, type: 3}
     - {fileID: 8383665745153255838, guid: 602953591a63745cf976931929d13260, type: 3}
     - {fileID: 3098517715768195520, guid: 602953591a63745cf976931929d13260, type: 3}
+    - {fileID: 8920744896203281733, guid: 602953591a63745cf976931929d13260, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8161702004312598794, guid: 602953591a63745cf976931929d13260, type: 3}
       insertIndex: -1
