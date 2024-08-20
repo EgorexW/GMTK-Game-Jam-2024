@@ -152,6 +152,14 @@ public class WaypointBehaviour : GameBehaviour
         base.OnDestroy();
         if (nextWaypoint != null) nextWaypoint.reserved = false;
     }
+    enum State
+    {
+        Moving,
+        Waiting,
+        NoWaypoint,
+        Finished,
+        Ending
+    }
 }
 
 enum OnFinish
@@ -159,12 +167,4 @@ enum OnFinish
     End,
     StayOnLast,
     Loop
-}
-enum State
-{
-    Moving,
-    Waiting,
-    NoWaypoint,
-    Finished,
-    Ending
 }

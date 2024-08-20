@@ -19,6 +19,7 @@ public class GameplayLoop : MonoBehaviour
 
     [Foldout("Events")] public UnityEvent<DaySummary> onDayEnd;
     [Foldout("Events")] public UnityEvent<CloseStoreSummary> onCloseStore;
+    [Foldout("Events")] public UnityEvent onRunDay;
 
     void Awake()
     {
@@ -50,6 +51,7 @@ public class GameplayLoop : MonoBehaviour
     public void RunDay()
     {
         if (!running) return;
+        onRunDay.Invoke();
         lastSummary = store.GetDaySummaryCalculator().CalculateSummary(store);
         day.RunDay(store, lastSummary);
     }
