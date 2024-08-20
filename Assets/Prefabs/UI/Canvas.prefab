@@ -398,11 +398,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1130027324
-      Data2: 1226301345
-      Data3: 929749681
-      Data4: -1362043357
-    Path: event:/UI Click
+      Data1: -1860953891
+      Data2: 1220277782
+      Data3: 943442049
+      Data4: 197366021
+    Path: event:/UI_CLICK
   Event: 
   PlayEvent: 19
   StopEvent: 0
@@ -581,11 +581,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1130027324
-      Data2: 1226301345
-      Data3: 929749681
-      Data4: -1362043357
-    Path: event:/UI Click
+      Data1: -1860953891
+      Data2: 1220277782
+      Data3: 943442049
+      Data4: 197366021
+    Path: event:/UI_CLICK
   Event: 
   PlayEvent: 19
   StopEvent: 0
@@ -1188,11 +1188,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1130027324
-      Data2: 1226301345
-      Data3: 929749681
-      Data4: -1362043357
-    Path: event:/UI Click
+      Data1: -1860953891
+      Data2: 1220277782
+      Data3: 943442049
+      Data4: 197366021
+    Path: event:/UI_CLICK
   Event: 
   PlayEvent: 19
   StopEvent: 0
@@ -1353,11 +1353,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1130027324
-      Data2: 1226301345
-      Data3: 929749681
-      Data4: -1362043357
-    Path: event:/UI Click
+      Data1: -1860953891
+      Data2: 1220277782
+      Data3: 943442049
+      Data4: 197366021
+    Path: event:/UI_CLICK
   Event: 
   PlayEvent: 19
   StopEvent: 0
@@ -1625,11 +1625,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1130027324
-      Data2: 1226301345
-      Data3: 929749681
-      Data4: -1362043357
-    Path: event:/UI Click
+      Data1: -1860953891
+      Data2: 1220277782
+      Data3: 943442049
+      Data4: 197366021
+    Path: event:/UI_CLICK
   Event: 
   PlayEvent: 19
   StopEvent: 0
@@ -2961,11 +2961,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1130027324
-      Data2: 1226301345
-      Data3: 929749681
-      Data4: -1362043357
-    Path: event:/UI Click
+      Data1: -1860953891
+      Data2: 1220277782
+      Data3: 943442049
+      Data4: 197366021
+    Path: event:/UI_CLICK
   Event: 
   PlayEvent: 19
   StopEvent: 0
@@ -3361,11 +3361,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1130027324
-      Data2: 1226301345
-      Data3: 929749681
-      Data4: -1362043357
-    Path: event:/UI Click
+      Data1: -1860953891
+      Data2: 1220277782
+      Data3: 943442049
+      Data4: 197366021
+    Path: event:/UI_CLICK
   Event: 
   PlayEvent: 19
   StopEvent: 0
@@ -3662,11 +3662,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1130027324
-      Data2: 1226301345
-      Data3: 929749681
-      Data4: -1362043357
-    Path: event:/UI Click
+      Data1: -1860953891
+      Data2: 1220277782
+      Data3: 943442049
+      Data4: 197366021
+    Path: event:/UI_CLICK
   Event: 
   PlayEvent: 19
   StopEvent: 0
@@ -3961,11 +3961,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1130027324
-      Data2: 1226301345
-      Data3: 929749681
-      Data4: -1362043357
-    Path: event:/UI Click
+      Data1: -1860953891
+      Data2: 1220277782
+      Data3: 943442049
+      Data4: 197366021
+    Path: event:/UI_CLICK
   Event: 
   PlayEvent: 19
   StopEvent: 0
@@ -4011,8 +4011,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -111.4928, y: 110.35547}
-  m_SizeDelta: {x: -221.9856, y: -220.54102}
+  m_AnchoredPosition: {x: -111.5, y: 110.35547}
+  m_SizeDelta: {x: -221.99, y: -220.541}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8528189841978013236
 CanvasRenderer:
@@ -4072,9 +4072,9 @@ MonoBehaviour:
   m_fontSize: 72
   m_fontSizeBase: 72
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 118
+  m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
@@ -4084,8 +4084,8 @@ MonoBehaviour:
   m_lineSpacing: 0
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_charWidthMaxAdj: 50
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 1
   m_linkedTextComponent: {fileID: 0}
@@ -4679,11 +4679,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1130027324
-      Data2: 1226301345
-      Data3: 929749681
-      Data4: -1362043357
-    Path: event:/UI Click
+      Data1: -1860953891
+      Data2: 1220277782
+      Data3: 943442049
+      Data4: 197366021
+    Path: event:/UI_CLICK
   Event: 
   PlayEvent: 19
   StopEvent: 0
@@ -5390,11 +5390,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1130027324
-      Data2: 1226301345
-      Data3: 929749681
-      Data4: -1362043357
-    Path: event:/UI Click
+      Data1: 977249396
+      Data2: 1116407891
+      Data3: -1438917245
+      Data4: -261625707
+    Path: event:/UI_CASH
   Event: 
   PlayEvent: 19
   StopEvent: 0
@@ -5965,11 +5965,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1130027324
-      Data2: 1226301345
-      Data3: 929749681
-      Data4: -1362043357
-    Path: event:/UI Click
+      Data1: -1860953891
+      Data2: 1220277782
+      Data3: 943442049
+      Data4: 197366021
+    Path: event:/UI_CLICK
   Event: 
   PlayEvent: 19
   StopEvent: 0
@@ -6554,11 +6554,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1130027324
-      Data2: 1226301345
-      Data3: 929749681
-      Data4: -1362043357
-    Path: event:/UI Click
+      Data1: -1860953891
+      Data2: 1220277782
+      Data3: 943442049
+      Data4: 197366021
+    Path: event:/UI_CLICK
   Event: 
   PlayEvent: 19
   StopEvent: 0

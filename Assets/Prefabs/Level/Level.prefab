@@ -197,6 +197,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3774647574730706124, guid: 187e6dc47eaa04e7e9afc35ce1bc6d37, type: 3}
+      propertyPath: m_fontSize
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 3783571515678585353, guid: 187e6dc47eaa04e7e9afc35ce1bc6d37, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -847,7 +851,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38719794b29c84831b74f958771f68b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leaderboardID: 10830
 --- !u!4 &5067944289969585233 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2046244501417747400, guid: b293412f0eb374a39838e32bb0f3e951, type: 3}

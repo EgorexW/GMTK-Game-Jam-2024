@@ -609,8 +609,8 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: ../../Others/FMOD/GMTK game jam 2024/GMTK game jam 2024.fspro
-  sourceBankPath: ../../Others/FMOD/GMTK game jam 2024/Build
+  sourceProjectPath: ../../Others/FMOD/FINAL SALE/FINAL SALE.fspro
+  sourceBankPath: ../../Others/FMOD/FINAL SALE/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -622,7 +622,7 @@ MonoBehaviour:
   TargetAssetPath: FMODBanks
   TargetBankFolder: 
   EventLinkage: 0
-  LoggingLevel: 0
+  LoggingLevel: 2
   SpeakerModeSettings: []
   SampleRateSettings: []
   LiveUpdateSettings: []

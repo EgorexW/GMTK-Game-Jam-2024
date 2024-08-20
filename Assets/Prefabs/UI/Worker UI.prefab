@@ -168,11 +168,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1130027324
-      Data2: 1226301345
-      Data3: 929749681
-      Data4: -1362043357
-    Path: event:/UI Click
+      Data1: 977249396
+      Data2: 1116407891
+      Data3: -1438917245
+      Data4: -261625707
+    Path: event:/UI_CASH
   Event: 
   PlayEvent: 19
   StopEvent: 0
@@ -277,7 +277,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 21.5
+  m_fontSize: 26.9
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

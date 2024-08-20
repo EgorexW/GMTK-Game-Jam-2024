@@ -284,11 +284,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1130027324
-      Data2: 1226301345
-      Data3: 929749681
-      Data4: -1362043357
-    Path: event:/UI Click
+      Data1: -1860953891
+      Data2: 1220277782
+      Data3: 943442049
+      Data4: 197366021
+    Path: event:/UI_CLICK
   Event: 
   PlayEvent: 19
   StopEvent: 0
@@ -1410,13 +1410,13 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2796993215563191647, guid: e15876856adbd467086fc71573531e7a, type: 3}
       propertyPath: m_text
-      value: You are a convinience store owner.  Unfortunately you start loosing
-        customers. Soon you will need to close down the store for good. Now, use
-        your economic skills to earn yourself the most profit before that happens
+      value: You are a convinience store owner.  Unfortunately you start losing customers.
+        Soon you will need to close down the store for good. Now, use your economic
+        skills to earn yourself the most profit before that happens
       objectReference: {fileID: 0}
     - target: {fileID: 2796993215563191647, guid: e15876856adbd467086fc71573531e7a, type: 3}
       propertyPath: m_fontSize
-      value: 84.6
+      value: 68.65
       objectReference: {fileID: 0}
     - target: {fileID: 2796993215563191647, guid: e15876856adbd467086fc71573531e7a, type: 3}
       propertyPath: m_lineSpacing
@@ -1743,11 +1743,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1130027324
-      Data2: 1226301345
-      Data3: 929749681
-      Data4: -1362043357
-    Path: event:/UI Click
+      Data1: -1860953891
+      Data2: 1220277782
+      Data3: 943442049
+      Data4: 197366021
+    Path: event:/UI_CLICK
   Event: 
   PlayEvent: 19
   StopEvent: 0
@@ -2225,11 +2225,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1130027324
-      Data2: 1226301345
-      Data3: 929749681
-      Data4: -1362043357
-    Path: event:/UI Click
+      Data1: -1860953891
+      Data2: 1220277782
+      Data3: 943442049
+      Data4: 197366021
+    Path: event:/UI_CLICK
   Event: 
   PlayEvent: 19
   StopEvent: 0
