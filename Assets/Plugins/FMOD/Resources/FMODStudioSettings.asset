@@ -609,10 +609,10 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: ../../Others/FMOD/FINAL SALE/FINAL SALE.fspro
-  sourceBankPath: ../../Others/FMOD/FINAL SALE/Build
+  sourceProjectPath: FMOD/FINAL SALE.fspro
+  sourceBankPath: FMOD/Build
   sourceBankPathUnformatted: 
-  BankRefreshCooldown: 5
+  BankRefreshCooldown: 1
   ShowBankRefreshWindow: 1
   AutomaticEventLoading: 1
   BankLoadType: 0

@@ -14,7 +14,6 @@ public class SubmitScoreScript : MonoBehaviour
         StartCoroutine(SubmitScoreRoutine((int)(score*100)));
     }
     IEnumerator SubmitScoreRoutine(int score){
-        DontDestroyOnLoad(gameObject);
         bool done = false;
         string leaderboardID = SceneManager.GetActiveScene().name.Replace(" ", "");
         LootLockerSDKManager.SubmitScore(PlayerPrefs.GetString("PlayerID"), score, leaderboardID, (response) => {
@@ -26,6 +25,5 @@ public class SubmitScoreScript : MonoBehaviour
             done = true;
         });
         yield return new WaitWhile(() => !done);
-        Destroy(gameObject);
     }
 }

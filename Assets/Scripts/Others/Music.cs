@@ -40,21 +40,13 @@ public class Music : MonoBehaviour
             case PlayingState.GameplayLoop:
                 break;
             case PlayingState.GoodDay:
-                goodDayInstance.getPlaybackState(out PLAYBACK_STATE goodState);
-                if (goodState == PLAYBACK_STATE.STOPPED){
-                    PlayGameplayLoop();
-                }
                 break;
             case PlayingState.BadDay:
-                badDayInstance.getPlaybackState(out PLAYBACK_STATE badState);
-                if (badState == PLAYBACK_STATE.STOPPED){
-                    PlayGameplayLoop();
-                }
                 break;
         }   
     }
 
-    void PlayGameplayLoop()
+    public void PlayGameplayLoop()
     {
         StopCurrentMusic();
         gameplayLoopInstance.start();
@@ -64,7 +56,7 @@ public class Music : MonoBehaviour
     public void EndDay(DaySummary daySummary)
     {
         StopCurrentMusic();
-        if (daySummary.income < 0){
+        if (daySummary.income > 0){
             goodDayInstance.start();
             playingState = PlayingState.GoodDay;
         }
@@ -79,5 +71,13 @@ public class Music : MonoBehaviour
         gameplayLoopInstance.stop(STOP_MODE.ALLOWFADEOUT);
         goodDayInstance.stop(STOP_MODE.ALLOWFADEOUT);
         badDayInstance.stop(STOP_MODE.ALLOWFADEOUT);
+    }
+
+    void OnDestroy()
+    {
+        StopCurrentMusic();
+        gameplayLoopInstance.release();
+        goodDayInstance.release();
+        badDayInstance.release();
     }
 }

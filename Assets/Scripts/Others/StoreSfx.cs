@@ -30,4 +30,12 @@ public class StoreSfx : MonoBehaviour
         storeCloseInstance.stop(STOP_MODE.ALLOWFADEOUT);
         storeOpenInstance.start();
     }
+
+    void OnDestroy()
+    {
+        storeOpenInstance.stop(STOP_MODE.IMMEDIATE);
+        storeCloseInstance.stop(STOP_MODE.IMMEDIATE);
+        storeOpenInstance.release();
+        storeCloseInstance.release();
+    }
 }
