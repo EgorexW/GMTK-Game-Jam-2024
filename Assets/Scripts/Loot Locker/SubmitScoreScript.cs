@@ -11,7 +11,7 @@ public class SubmitScoreScript : MonoBehaviour
         SubmitScore(closeStoreSummary.overallMoney);
     }
     public void SubmitScore(float score){
-        StartCoroutine(SubmitScoreRoutine((int)(score*100)));
+        StartCoroutine(SubmitScoreRoutine((int)score));
     }
     IEnumerator SubmitScoreRoutine(int score){
         bool done = false;

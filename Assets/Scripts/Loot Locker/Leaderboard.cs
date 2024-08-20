@@ -53,7 +53,7 @@ public class Leaderboard : MonoBehaviour
                     } else {
                         playerNames += "Guest";
                     }
-                    string score = (member.score/100f).ToString();
+                    string score = member.score.ToString();
                     playerScores += score + "\n";
                     playerNames += "\n";
                 }
@@ -103,7 +103,7 @@ public class Leaderboard : MonoBehaviour
                             {
                                 playerNames += "Guest";
                             }
-                            string score = (member.score/100).ToString();
+                            string score = member.score.ToString();
                             playerScores += score + "\n";
                             playerNames += "\n";
                         }
