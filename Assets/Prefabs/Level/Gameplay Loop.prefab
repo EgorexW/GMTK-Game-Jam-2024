@@ -300,7 +300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 288ed84ae0e414832bf845e84dafbf91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionKey: 27
+  actionKey: 114
   onKeyDown:
     m_PersistentCalls:
       m_Calls:
@@ -462,7 +462,6 @@ MonoBehaviour:
       Data3: -594399868
       Data4: -396057153
     Path: event:/END_DAY_GOOD
-  dayEndPlayTime: 8
 --- !u!114 &708472311223420398
 MonoBehaviour:
   m_ObjectHideFlags: 0

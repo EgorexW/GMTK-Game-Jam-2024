@@ -861,11 +861,12 @@ PrefabInstance:
     - target: {fileID: 2796993215563191647, guid: e15876856adbd467086fc71573531e7a, type: 3}
       propertyPath: m_text
       value: Great, now you know the basics. Continue playing. Remember to fire the
-        manager and close the store when you stop making profit.
+        manager and close the store when you stop making profit. You can always quit
+        with "R".
       objectReference: {fileID: 0}
     - target: {fileID: 2796993215563191647, guid: e15876856adbd467086fc71573531e7a, type: 3}
       propertyPath: m_fontSize
-      value: 112.8
+      value: 83.5
       objectReference: {fileID: 0}
     - target: {fileID: 2796993215563191647, guid: e15876856adbd467086fc71573531e7a, type: 3}
       propertyPath: m_lineSpacing
