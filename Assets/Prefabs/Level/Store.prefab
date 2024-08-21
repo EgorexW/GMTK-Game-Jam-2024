@@ -585,6 +585,7 @@ GameObject:
   - component: {fileID: 2937347177207333564}
   - component: {fileID: 6260222432229915029}
   - component: {fileID: 8891332573786166124}
+  - component: {fileID: 6120551729888872246}
   m_Layer: 0
   m_Name: Store
   m_TagString: Untagged
@@ -636,7 +637,19 @@ MonoBehaviour:
   storeRunner: {fileID: 9204916191576356187}
   onCloseStore:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6120551729888872246}
+        m_TargetAssemblyTypeName: SubmitScoreScript, Assembly-CSharp
+        m_MethodName: SubmitScore
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6260222432229915029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -660,6 +673,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dcd85586ada64752a0531672dfcf227e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6120551729888872246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7395773613301788259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38719794b29c84831b74f958771f68b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7399614275515152744

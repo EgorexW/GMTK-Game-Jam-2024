@@ -1,9 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using LootLocker.Requests;
 using TMPro;
-using System;
 
 
 public class Leaderboard : MonoBehaviour
@@ -76,7 +74,7 @@ public class Leaderboard : MonoBehaviour
             {
                 int rank = response.rank;
                 int count = nr;
-                int after = rank < nr ? 0 : rank - (int)MathF.Ceiling(nr/2);
+                int after = rank < nr ? 0 : rank - Mathf.CeilToInt(nr/2f);
 
                 LootLockerSDKManager.GetScoreList(LeaderboardID, count, after, (response) =>
                 {
