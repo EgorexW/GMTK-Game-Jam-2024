@@ -16,12 +16,11 @@ MonoBehaviour:
   attractivenessImpact:
     baseValue: 0
   clientsCapImpact:
-    cashValue: 0
-    cashierValue: 1
+    cashingValue: 7
   revenueImpact:
     baseValue: 0
   cleannessImpact:
     dirtinessArea: 0
     cleaningValue: 0
-  description: Serves customers, works at a cash
+  description: Serves customers
   salary: 50

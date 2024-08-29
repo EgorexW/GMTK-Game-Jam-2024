@@ -12,7 +12,6 @@ public class StoreClosing : MonoBehaviour
     {
         var summary = new CloseStoreSummary{
             money = store.GetMoney().GetValue(),
-            infrastructureSold = store.GetInfrastructure().SellAll(),
             moneyMultiplier = moneyMultiplier
         };
         store.GetMoney().MultiplyValue(moneyMultiplier);

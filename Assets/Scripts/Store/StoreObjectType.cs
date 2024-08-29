@@ -28,8 +28,7 @@ public struct RevenueImpact
 [Serializable]
 public struct ClientsCapImpact
 {
-    public int cashValue;
-    public int cashierValue;
+    public int cashingValue;
 }
 
 [Serializable]

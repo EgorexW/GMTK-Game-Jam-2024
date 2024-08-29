@@ -10,7 +10,6 @@ public class Morning : MonoBehaviour
 {
     [Required] [SerializeField] MorningUI morningUI;
     [GetComponentInChildren][SerializeField] WorkerPanelLink workerPanelLink;
-    [GetComponentInChildren][SerializeField] InfrastructurePanelLink infrastructurePanelLink;
 
     [Foldout("Events")] public UnityEvent onEndMorning = new UnityEvent();
     
@@ -18,7 +17,6 @@ public class Morning : MonoBehaviour
     {
         morningUI.Show();
         workerPanelLink.SetWorkers(store.GetWorkers());
-        infrastructurePanelLink.SetInfrastructure(store.GetInfrastructure());
     }
 
     public void EndMorning()

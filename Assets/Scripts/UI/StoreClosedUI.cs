@@ -5,7 +5,6 @@ using UnityEngine;
 public class StoreClosedUI : MonoBehaviour
 {
     [Required][SerializeField] TextUI moneyUI;
-    [Required][SerializeField] TextUI infrastructureSoldUI;
     [Required][SerializeField] TextUI moneyMultiplierUI;
     [Required] [SerializeField] TextUI overallMoneyUI;
     [Required] [SerializeField] ShowLeaderboard showLeaderboard;
@@ -19,7 +18,6 @@ public class StoreClosedUI : MonoBehaviour
     {
         Show();
         moneyUI.UpdateUI(summary.money);
-        infrastructureSoldUI.UpdateUI(summary.infrastructureSold);
         moneyMultiplierUI.UpdateUI(summary.moneyMultiplier);
         overallMoneyUI.UpdateUI(summary.overallMoney);
         showLeaderboard.Show();

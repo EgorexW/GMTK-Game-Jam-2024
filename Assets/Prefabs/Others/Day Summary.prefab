@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8fd02f3f9cc42a1bbbd32ef15dae209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  capPerPair: 7
+  capMod: 1
   clientsCap: 0
 --- !u!1 &2417890134998372849
 GameObject:
@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8507f1a2916aa4f70af2eb9be349ab45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseAttractiveness: 10
+  baseAttractiveness: 20
   attractiveness: 19
 --- !u!1 &4009975563359820058
 GameObject:

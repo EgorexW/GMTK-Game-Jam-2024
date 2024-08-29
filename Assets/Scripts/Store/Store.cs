@@ -8,7 +8,6 @@ public class Store : MonoBehaviour
 {
     [GetComponentInChildren][SerializeField] Workers workers;
     [GetComponentInChildren][SerializeField] Money money;
-    [GetComponentInChildren][SerializeField] Infrastructure infrastructure;
     [GetComponentInChildren][SerializeField] DaySummaryCalculator daySummaryCalculator;
     [GetComponentInChildren][SerializeField] StoreClosing storeClosing;
     [GetComponentInChildren][SerializeField] StoreRunner storeRunner;
@@ -29,10 +28,6 @@ public class Store : MonoBehaviour
     {
         return workers;
     }
-    public Infrastructure GetInfrastructure()
-    {
-        return infrastructure;
-    }
     public Money GetMoney()
     {
         return money;
@@ -42,7 +37,6 @@ public class Store : MonoBehaviour
     {
         money.ModifyValue(summary.income);
         workers.DayPassed();
-        infrastructure.DayPassed();
         daySummaryCalculator.DayPassed();
         storeClosing.DayPassed();
     }

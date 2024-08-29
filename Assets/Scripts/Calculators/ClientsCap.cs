@@ -1,10 +1,11 @@
 using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class ClientsCap : MonoBehaviour
 {
-    [SerializeField] int capPerPair;
+    [SerializeField] int capMod = 1;
     
     [ReadOnly][SerializeField] int clientsCap;
 
@@ -15,15 +16,12 @@ public class ClientsCap : MonoBehaviour
     }
     int Calculate(List<IStoreObject> storeObjects)
     {
-        var cashes = 0;
-        var cashiers = 0;
+        var cashingValue = 0;
         foreach (var storeObject in storeObjects){
             var shopObjectType = storeObject.GetShopObjectType();
-            cashes += shopObjectType.clientsCapImpact.cashValue;
-            cashiers += shopObjectType.clientsCapImpact.cashierValue;
+            cashingValue += shopObjectType.clientsCapImpact.cashingValue;
         }
-        var pairs = Mathf.Min(cashes, cashiers);
-        var value = pairs * capPerPair; 
+        var value = cashingValue * capMod; 
         return value;
     }
 }
