@@ -17,7 +17,7 @@ public class StartLootLockerSession : MonoBehaviour
                 PlayerPrefs.SetString("PlayerID", response.player_id.ToString());
                 PlayerPrefs.Save();
             } else {
-                Debug.Log("Failed to login");
+                Debug.Log($"Failed to login: {response.statusCode}");
             }
             done = true;
         });

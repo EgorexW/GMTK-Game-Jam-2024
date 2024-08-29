@@ -17,7 +17,7 @@ public class RevenuePerClient : MonoBehaviour
     {
         var value = baseRevenuePerClient;
         foreach (var shopObject in shopObjects){
-            var revenueImpact = shopObject.GetShopObjectType().revenueImpact;
+            var revenueImpact = shopObject.GetStoreObjectType().revenueImpact;
             value += revenueImpact.baseValue;
         }
         return value;

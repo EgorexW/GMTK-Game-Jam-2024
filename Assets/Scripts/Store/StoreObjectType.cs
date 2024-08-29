@@ -15,8 +15,7 @@ public class StoreObjectType : ScriptableObject
 [Serializable]
 public struct CleannessImpact
 {
-    public float dirtinessArea;
-    public float cleaningValue;
+    public float dirtGeneration;
 }
 
 [Serializable]
@@ -39,5 +38,5 @@ public struct AttractivenessImpact
 
 public interface IStoreObject
 {
-    public StoreObjectType GetShopObjectType();
+    public StoreObjectType GetStoreObjectType();
 }

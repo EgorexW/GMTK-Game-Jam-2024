@@ -7,11 +7,11 @@ public class ShowLeaderboard : MonoBehaviour
 {
     public Leaderboard leaderboard;
 
-    public void Show(int nr){
+    public void ShowByLevelNr(int nr){
         leaderboard.FetchTopHighScores("Level" + (nr + 1));
     }
 
-    public void Show()
+    public void ShowBySceneName()
     {
         leaderboard.FetchTopHighScores(SceneManager.GetActiveScene().name.Replace(" ", ""));
     }

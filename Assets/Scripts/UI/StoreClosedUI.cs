@@ -20,7 +20,7 @@ public class StoreClosedUI : MonoBehaviour
         moneyUI.UpdateUI(summary.money);
         moneyMultiplierUI.UpdateUI(summary.moneyMultiplier);
         overallMoneyUI.UpdateUI(summary.overallMoney);
-        showLeaderboard.Show();
+        showLeaderboard.ShowBySceneName();
     }
     public void Show()
     {

@@ -33,7 +33,7 @@ public class Worker : MonoBehaviour, IStoreObject
         daysTillFire = value;
     }
 
-    public StoreObjectType GetShopObjectType()
+    public StoreObjectType GetStoreObjectType()
     {
         return workerType;
     }

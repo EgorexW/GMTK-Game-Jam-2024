@@ -10,18 +10,18 @@ public class StoreAttractiveness : MonoBehaviour
     
     [ReadOnly][SerializeField] float attractiveness;
 
-    public float Recalculate(List<IStoreObject> shopObjects, float storeCleanness)
+    public float Recalculate(List<IStoreObject> shopObjects)
     {
-        attractiveness = Calculate(shopObjects, storeCleanness);
+        attractiveness = Calculate(shopObjects);
         return attractiveness;
     }
-    float Calculate(List<IStoreObject> shopObjects, float storeCleanness)
+    float Calculate(List<IStoreObject> shopObjects)
     {
         var value = baseAttractiveness;
         foreach (var shopObject in shopObjects){
-            var attractivenessImpact = shopObject.GetShopObjectType().attractivenessImpact;
+            var attractivenessImpact = shopObject.GetStoreObjectType().attractivenessImpact;
             value += attractivenessImpact.baseValue;
         }
-        return value * storeCleanness;
+        return value;
     }
 }

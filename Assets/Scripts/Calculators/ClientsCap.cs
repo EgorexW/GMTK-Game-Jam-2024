@@ -18,7 +18,7 @@ public class ClientsCap : MonoBehaviour
     {
         var cashingValue = 0;
         foreach (var storeObject in storeObjects){
-            var shopObjectType = storeObject.GetShopObjectType();
+            var shopObjectType = storeObject.GetStoreObjectType();
             cashingValue += shopObjectType.clientsCapImpact.cashingValue;
         }
         var value = cashingValue * capMod; 

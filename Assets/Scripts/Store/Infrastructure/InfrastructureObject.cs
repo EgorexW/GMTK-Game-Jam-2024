@@ -22,7 +22,7 @@ public class InfrastructureObject : MonoBehaviour, IStoreObject
         return infrastructureType;
     }
 
-    public StoreObjectType GetShopObjectType()
+    public StoreObjectType GetStoreObjectType()
     {
         return infrastructureType;
     }

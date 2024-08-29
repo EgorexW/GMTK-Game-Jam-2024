@@ -9,7 +9,7 @@ public class QuitButton : MonoBehaviour
 {
     void Awake()
     {
-        if (Application.platform == RuntimePlatform.WebGLPlayer){
+        if (Application.platform == RuntimePlatform.WebGLPlayer || Application.platform == RuntimePlatform.OSXEditor){
             Destroy(gameObject);
         }
     }

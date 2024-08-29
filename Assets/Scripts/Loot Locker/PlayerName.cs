@@ -4,7 +4,7 @@ using UnityEngine;
 using LootLocker.Requests;
 using UnityEngine.Events;
 
-public class SetPlayerNameScript : MonoBehaviour
+public class PlayerName : MonoBehaviour
 {
     public UnityEvent onComplete;
     
@@ -25,5 +25,10 @@ public class SetPlayerNameScript : MonoBehaviour
         });
         yield return new WaitWhile(() => !done);
         onComplete.Invoke();
+    }
+    
+    public static string GetPlayerID()
+    {
+        return PlayerPrefs.GetString("PlayerID", "");
     }
 }
