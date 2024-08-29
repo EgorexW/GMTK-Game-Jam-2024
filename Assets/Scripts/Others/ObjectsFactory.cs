@@ -9,8 +9,9 @@ public class ObjectsFactory : MonoBehaviour
     
     List<GameObject> objects = new();
 
-    [Foldout("Events")] public UnityEvent<GameObject> onCreateObject = new();
-    
+    [Foldout("Events")] public UnityEvent<GameObject> onCreateObject = new ();
+    [Foldout("Events")] public UnityEvent<GameObject> onRemoveObject = new ();
+
     void Awake()
     {
         SetPrefab();
@@ -50,6 +51,7 @@ public class ObjectsFactory : MonoBehaviour
         else if (!objects.Contains(obj)){
             return;
         }
+        onRemoveObject.Invoke(obj);
         Destroy(obj);
         objects.Remove(obj);
     }

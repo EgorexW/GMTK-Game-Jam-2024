@@ -16,12 +16,10 @@ MonoBehaviour:
   attractivenessImpact:
     baseValue: 2
   clientsCapImpact:
-    cashValue: 0
-    cashierValue: 0
+    cashingValue: 0
   revenueImpact:
     baseValue: 0
   cleannessImpact:
-    dirtinessArea: 0
-    cleaningValue: 6
-  description: The more infrastructure you have, the more cleaners you need
+    dirtGeneration: -3
+  description: They clean up the store while it's running
   salary: 60

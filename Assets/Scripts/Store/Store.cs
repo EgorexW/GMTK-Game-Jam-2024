@@ -8,6 +8,7 @@ public class Store : MonoBehaviour
 {
     [GetComponentInChildren][SerializeField] Workers workers;
     [GetComponentInChildren][SerializeField] Money money;
+    [GetComponentInChildren][SerializeField] Dirt dirt;
     [GetComponentInChildren][SerializeField] DaySummaryCalculator daySummaryCalculator;
     [GetComponentInChildren][SerializeField] StoreClosing storeClosing;
     [GetComponentInChildren][SerializeField] StoreRunner storeRunner;
@@ -36,6 +37,7 @@ public class Store : MonoBehaviour
     public void EndDay(DaySummary summary)
     {
         money.ModifyValue(summary.income);
+        dirt.ModifyValue(summary.dirtGenerated);
         workers.DayPassed();
         daySummaryCalculator.DayPassed();
         storeClosing.DayPassed();
@@ -50,5 +52,10 @@ public class Store : MonoBehaviour
     public StoreRunner GetStoreRunner()
     {
         return storeRunner;
+    }
+
+    public Dirt GetDirt()
+    {
+        return dirt;
     }
 }

@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36637e3f953e48aca9131609e225a1a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  decreasePerDay: 0.1
+  decreasePerDay: 0.05
   minAttractiveness: 0.2
   attractivenessMod: 1
   clientsPerDay: 0
@@ -285,9 +285,8 @@ MonoBehaviour:
   clientsCap: {fileID: 3579009047847791732}
   clientsPerDay: {fileID: 2676359688449312426}
   revenuePerClient: {fileID: 199218555560602210}
-  storeCleanness: {fileID: 2324827318271051424}
+  dirtGenerator: {fileID: 2324827318271051424}
   workersSalary: {fileID: 2461081220856994153}
-  rent: 0
 --- !u!1 &9048518012610888918
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,8 +297,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3479795452953967836}
   - component: {fileID: 2324827318271051424}
-  - component: {fileID: 3948866756805531958}
-  - component: {fileID: 4847379455724350272}
+  - component: {fileID: 893375246910856209}
+  - component: {fileID: 5385154479574093633}
   m_Layer: 0
   m_Name: Store Cleanness
   m_TagString: Untagged
@@ -334,14 +333,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5a679ca50664d82a4d1a486b6172241, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseCleanningValue: 5
-  storeCleanness: 0
+  dirtPerCustomer: 0.2
+  dirtGenerated: 0
   onRecalculate:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3948866756805531958}
-        m_TargetAssemblyTypeName: CleannessBehaviour, Assembly-CSharp
-        m_MethodName: SetTargetCleanness
+      - m_Target: {fileID: 893375246910856209}
+        m_TargetAssemblyTypeName: DirtGenerationBehaviour, Assembly-CSharp
+        m_MethodName: Generate
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -351,7 +350,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3948866756805531958
+--- !u!114 &893375246910856209
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -366,10 +365,10 @@ MonoBehaviour:
   onDestroy:
     m_PersistentCalls:
       m_Calls: []
-  objectsFactory: {fileID: 4847379455724350272}
+  objectsFactory: {fileID: 5385154479574093633}
   changeTime: 60
   waypointType: {fileID: 11400000, guid: f38c85289e40c4f80a43646d1a23a29f, type: 2}
---- !u!114 &4847379455724350272
+--- !u!114 &5385154479574093633
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -383,5 +382,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 7829388314825628979, guid: 0e71d64c17ce44691ae213f081cc9ac2, type: 3}
   onCreateObject:
+    m_PersistentCalls:
+      m_Calls: []
+  onRemoveObject:
     m_PersistentCalls:
       m_Calls: []

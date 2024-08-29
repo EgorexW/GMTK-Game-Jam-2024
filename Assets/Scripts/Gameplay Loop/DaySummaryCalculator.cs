@@ -9,10 +9,8 @@ public class DaySummaryCalculator : MonoBehaviour
     [GetComponentInChildren][SerializeField] ClientsCap clientsCap;
     [GetComponentInChildren][SerializeField] ClientsPerDay clientsPerDay;
     [GetComponentInChildren][SerializeField] RevenuePerClient revenuePerClient;
-    [FormerlySerializedAs("dirtynnessGenerated")] [FormerlySerializedAs("storeCleanness")] [GetComponentInChildren][SerializeField] DirtGenerated dirtGenerated;
-    [FormerlySerializedAs("costs")] [GetComponentInChildren][SerializeField] WorkersSalary workersSalary;
-    
-    [SerializeField] float rent = 150;
+    [GetComponentInChildren][SerializeField] DirtGenerator dirtGenerator;
+    [GetComponentInChildren][SerializeField] WorkersSalary workersSalary;
 
     public DaySummary CalculateSummary(Store store)
     {
@@ -20,14 +18,13 @@ public class DaySummaryCalculator : MonoBehaviour
         Workers workers = store.GetWorkers();
         var attractiveness = storeAttractiveness.Recalculate(shopObjects);
         var customersServedCap = clientsCap.Recalculate(shopObjects);
-        var totalCustomers = clientsPerDay.Recalculate(attractiveness);
+        var totalCustomers = clientsPerDay.Recalculate(attractiveness, store.GetDirt().GetValue());
         var customersServed = Mathf.Min(totalCustomers, customersServedCap);
-        var storeCleannessValue = dirtGenerated.Recalculate(shopObjects, customersServed);
+        var dirtGenerated = dirtGenerator.Recalculate(shopObjects, customersServed);
         var revenuePerClientValue = revenuePerClient.Recalculate(shopObjects);
         var revenueValue = revenuePerClientValue * customersServed;
         var workersSalaryValue = workersSalary.Recalculate(workers);
-        var costsValue = rent + workersSalaryValue;
-        var income = revenueValue - costsValue;
+        var income = revenueValue - workersSalaryValue;
         var summary = new DaySummary{
             income = income,
             totalCustomers = totalCustomers,
@@ -35,8 +32,8 @@ public class DaySummaryCalculator : MonoBehaviour
             revenue = revenueValue,
             averageSpending = revenuePerClientValue,
             workersSalary = workersSalaryValue,
-            rent = rent,
-            costs = costsValue
+            dirtGenerated = dirtGenerated,
+            costs = workersSalaryValue
         };
         return summary;
     }
@@ -54,7 +51,7 @@ public struct DaySummary
     public float revenue;
     public float averageSpending;
     public float workersSalary;
-    public float rent;
+    public float dirtGenerated;
     public float costs;
     public int totalCustomers;
 }

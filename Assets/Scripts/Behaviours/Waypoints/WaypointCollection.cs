@@ -40,4 +40,14 @@ public class WaypointCollection : MonoBehaviour
         }
         return availableWaypoints;
     }
+
+    public List<Vector3> GetWaypointsPosOfType(WaypointType waypointType, bool ignoreReserved = false)
+    {
+        var waypoints = GetWaypointsOfType(waypointType, ignoreReserved);
+        var poses = new List<Vector3>();
+        foreach (Waypoint waypoint in waypoints){
+            poses.Add(waypoint.transform.position);
+        }
+        return poses;
+    }
 }
