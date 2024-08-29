@@ -1,8 +1,6 @@
 using System;
-using System.Collections;
 using UnityEngine;
 using LootLocker.Requests;
-using TMPro;
 using UnityEngine.Serialization;
 
 

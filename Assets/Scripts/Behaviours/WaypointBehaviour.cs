@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using NaughtyAttributes;
 using Nrjwolf.Tools.AttachAttributes;
 using Pathfinding;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(Seeker), typeof(AIPath))]

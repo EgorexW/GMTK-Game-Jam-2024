@@ -1,8 +1,6 @@
-using System;
 using UnityEngine;
 using TMPro;
 using NaughtyAttributes;
-using UnityEngine.Events;
 
 #if UNITY_EDITOR
 #endif

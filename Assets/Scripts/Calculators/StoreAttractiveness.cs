@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using NaughtyAttributes;
-using Unity.Mathematics;
 using UnityEngine;
 
 public class StoreAttractiveness : MonoBehaviour

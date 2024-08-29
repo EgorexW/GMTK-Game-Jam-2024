@@ -1,5 +1,4 @@
 using NaughtyAttributes;
-using Unity.Mathematics;
 using UnityEngine;
 
 public class ClientsPerDay : MonoBehaviour

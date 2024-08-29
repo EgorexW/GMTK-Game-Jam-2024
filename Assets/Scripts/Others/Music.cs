@@ -1,9 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using FMOD.Studio;
 using FMODUnity;
-using NaughtyAttributes;
 using UnityEngine;
 using STOP_MODE = FMOD.Studio.STOP_MODE;
 
