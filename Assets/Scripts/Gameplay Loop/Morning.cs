@@ -6,7 +6,9 @@ using UnityEngine.Events;
 public class Morning : MonoBehaviour
 {
     [Required] [SerializeField] MorningUI morningUI;
+    
     [GetComponentInChildren][SerializeField] WorkerPanelLink workerPanelLink;
+    [GetComponentInChildren][SerializeField] PaidActionsLink paidActionsLink;
 
     [Foldout("Events")] public UnityEvent onEndMorning = new UnityEvent();
     
@@ -14,6 +16,7 @@ public class Morning : MonoBehaviour
     {
         morningUI.Show();
         workerPanelLink.SetWorkers(store.GetWorkers());
+        paidActionsLink.SetPaidActions(store.GetPaidActions());
     }
 
     public void EndMorning()

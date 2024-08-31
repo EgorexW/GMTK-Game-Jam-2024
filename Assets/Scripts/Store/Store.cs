@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class Store : MonoBehaviour
 {
     [GetComponentInChildren][SerializeField] Workers workers;
+    [GetComponentInChildren][SerializeField] PaidActions paidAction;
     [GetComponentInChildren][SerializeField] Money money;
     [GetComponentInChildren][SerializeField] Dirt dirt;
     [GetComponentInChildren][SerializeField] DaySummaryCalculator daySummaryCalculator;
@@ -57,5 +58,10 @@ public class Store : MonoBehaviour
     public Dirt GetDirt()
     {
         return dirt;
+    }
+
+    public PaidActions GetPaidActions()
+    {
+        return paidAction;
     }
 }

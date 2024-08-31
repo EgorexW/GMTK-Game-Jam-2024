@@ -4,25 +4,25 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public class WorkersPanel : MonoBehaviour
-{
+{    [Foldout("Events")] public UnityEvent<Worker> onClickEvent = new ();
+     void Awake()
+     {
+         objectsFactory.onCreateObject.AddListener(OnCreateObject);
+     }
+ 
+     void OnCreateObject(GameObject arg0)
+     {
+         var panel = arg0.GetComponent<WorkerTypePanel>();
+         panel.onClickEvent.AddListener(onClickEvent.Invoke);
+     }
+ 
+     void Start()
+     {
+         Hide();
+     }
     [Required] [SerializeField] ObjectsFactory objectsFactory;
     
-    [Foldout("Events")] public UnityEvent<Worker> onClickEvent = new ();
-    void Awake()
-    {
-        objectsFactory.onCreateObject.AddListener(OnCreateObject);
-    }
 
-    void OnCreateObject(GameObject arg0)
-    {
-        var panel = arg0.GetComponent<WorkerTypePanel>();
-        panel.onClickEvent.AddListener(onClickEvent.Invoke);
-    }
-
-    void Start()
-    {
-        Hide();
-    }
 
     public void ShowWorkers(Workers workers)
     {
