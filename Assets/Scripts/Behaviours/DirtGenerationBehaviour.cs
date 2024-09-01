@@ -50,11 +50,11 @@ public class DirtGenerationBehaviour : GameBehaviour
         if (!(timeSinceLastSpawn >= spawnDelay)) return;
         if (difference <= 0) return;
         timeSinceLastSpawn = 0;
+        difference -= 1;
         if (unusedPositions.Count < 1){
             Debug.LogWarning("Ran out of unused positions", this);
             return;
         }
-        difference -= 1;
         GameObject obj = objectsFactory.AddObject();
         Vector3 random = unusedPositions.Random();
         unusedPositions.Remove(random);

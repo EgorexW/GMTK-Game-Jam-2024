@@ -67,7 +67,7 @@ public class ObjectsUI : CountUI
         activeObjs.Remove(obj);
         inactiveObjs.Enqueue(obj);
     }
-    public void ClearIcons(){
+    public void Clear(){
         SetCount(0);
     }
 

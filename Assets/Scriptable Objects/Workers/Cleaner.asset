@@ -20,6 +20,6 @@ MonoBehaviour:
   revenueImpact:
     baseValue: 0
   cleannessImpact:
-    dirtGeneration: -3
+    dirtGeneration: -5
   description: They clean up the store while it's running
   salary: 60

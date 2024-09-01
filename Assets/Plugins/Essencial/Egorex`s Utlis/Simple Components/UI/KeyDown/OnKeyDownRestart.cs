@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class OnKeyDownRestart : KeyDownEvent
+public class OnKeyDownRestart : OnKeyDown
 {
     [SerializeField] protected bool async;
     public void Restart()

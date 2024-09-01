@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class OnKeyDownQuit : KeyDownEvent
+public class OnKeyDownQuit : OnKeyDown
 {
     void Awake()
     {

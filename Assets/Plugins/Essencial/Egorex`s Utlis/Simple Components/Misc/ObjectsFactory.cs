@@ -15,6 +15,7 @@ public class ObjectsFactory : MonoBehaviour
     void Awake()
     {
         SetPrefab();
+        prefab.SetActive(false);
     }
 
     void SetPrefab()
@@ -22,7 +23,6 @@ public class ObjectsFactory : MonoBehaviour
         if (prefab != null) return;
         if (transform.childCount <= 0) return;
         prefab = transform.GetChild(0).gameObject;
-        prefab.SetActive(false);
     }
     public void SetCount(int count)
     {

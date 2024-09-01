@@ -6,12 +6,14 @@ using UnityEngine.Serialization;
 
 public class Leaderboard : MonoBehaviour
 {
-    [SerializeField] ObjectsUI objectsUI;
+    const int MAX_SCORES = 200;
+    
+    [SerializeField] ObjectsFactory objectsUI;
     [SerializeField] LeaderboardMode mode = LeaderboardMode.GetHighScoresAndPlayerScore;
     [FormerlySerializedAs("nr")] [SerializeField] int maxNrToShow;
 
     public void FetchTopHighScores(string leaderboardID){
-        LootLockerSDKManager.GetScoreList(leaderboardID, 9999, OnGetScores);
+        LootLockerSDKManager.GetScoreList(leaderboardID, MAX_SCORES, OnGetScores);
     }
 
     void OnGetScores(LootLockerGetScoreListResponse response)
@@ -22,7 +24,8 @@ public class Leaderboard : MonoBehaviour
         }
         var scores = response.items;
         var scoresNr = Mathf.Min(scores.Length, maxNrToShow);
-        objectsUI.UpdateUI(scoresNr);
+        objectsUI.Clear();
+        objectsUI.SetCount(scoresNr);
         var playerID = PlayerName.GetPlayerID();
         var startIndex = 0;
         var endIndex = scoresNr;
@@ -35,11 +38,16 @@ public class Leaderboard : MonoBehaviour
                 }
             }
             if (mode == LeaderboardMode.GetPlayerScore){
-                startIndex = Mathf.Min(0, Mathf.FloorToInt(playerRank - (maxNrToShow - 1) / 2f));
-                endIndex = Mathf.Min(startIndex + scoresNr);
+                startIndex = Mathf.Max(0, Mathf.FloorToInt(playerRank - (maxNrToShow - 1) / 2f));
+                var diff = startIndex + scoresNr - scores.Length;
+                if (diff > 0){
+                    startIndex -= diff;
+                }
+                endIndex = startIndex + scoresNr;
             }
         }
         var index = 0;
+        // Debug.Log("Showing scores: " + startIndex + " - " + endIndex);
         for (var i = startIndex; i < endIndex; i++){
             ShowScore(i, index);
             index++;
@@ -47,7 +55,7 @@ public class Leaderboard : MonoBehaviour
 
         void ShowScore(int scoreIndex, int objectUIIndex)
         {
-            var obj = objectsUI.GetActiveObjs()[objectUIIndex];
+            var obj = objectsUI.GetObjects()[objectUIIndex];
             var statPanel = obj.GetComponent<StatPanel>();
             var score = scores[scoreIndex];
             var playerName = score.player.name;
@@ -55,10 +63,10 @@ public class Leaderboard : MonoBehaviour
             if (playerName == ""){
                 playerName = isThisPlayer ? "You" : "Guest";
             }
-            var textToShow = $"{scoreIndex}. {playerName}";
+            var textToShow = $"{scoreIndex+1}. {playerName}";
             if (isThisPlayer)
             {
-                textToShow = $"{scoreIndex}. <color=red>{playerName}</color>";
+                textToShow = $"{scoreIndex+1}. <color=red>{playerName}</color>";
             }
             statPanel.description.UpdateUI(textToShow);
             statPanel.value.UpdateUI(score.score);
