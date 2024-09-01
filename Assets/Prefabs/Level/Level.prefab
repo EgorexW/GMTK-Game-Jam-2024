@@ -138,6 +138,14 @@ PrefabInstance:
       propertyPath: value
       value: 
       objectReference: {fileID: 3835365066860016146}
+    - target: {fileID: 2726289634329124680, guid: 187e6dc47eaa04e7e9afc35ce1bc6d37, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -174
+      objectReference: {fileID: 0}
+    - target: {fileID: 2726289634329124680, guid: 187e6dc47eaa04e7e9afc35ce1bc6d37, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 75
+      objectReference: {fileID: 0}
     - target: {fileID: 3017233703666296262, guid: 187e6dc47eaa04e7e9afc35ce1bc6d37, type: 3}
       propertyPath: store
       value: 
@@ -157,6 +165,10 @@ PrefabInstance:
     - target: {fileID: 4356810150291329358, guid: 187e6dc47eaa04e7e9afc35ce1bc6d37, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: PaidActionsUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5194222694818175967, guid: 187e6dc47eaa04e7e9afc35ce1bc6d37, type: 3}
+      propertyPath: m_fontSize
+      value: 93.5
       objectReference: {fileID: 0}
     - target: {fileID: 5809716477286692096, guid: 187e6dc47eaa04e7e9afc35ce1bc6d37, type: 3}
       propertyPath: m_AnchorMax.y
@@ -210,6 +222,10 @@ PrefabInstance:
       propertyPath: objectsUI
       value: 
       objectReference: {fileID: 7955790188951996863}
+    - target: {fileID: 8064699568382615753, guid: 187e6dc47eaa04e7e9afc35ce1bc6d37, type: 3}
+      propertyPath: m_fontSize
+      value: 93.5
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6384391252709776756, guid: 187e6dc47eaa04e7e9afc35ce1bc6d37, type: 3}
     m_RemovedGameObjects: []
